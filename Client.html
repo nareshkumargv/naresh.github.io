@@ -24,8 +24,7 @@
     
     <br><br>
     <input type="text" id="input-text-chat" placeholder="Enter Text Chat" disabled>
-    <button id="share-file" disabled>Share File</button>
-    
+        
     <br><br>
     <button id="btn-leave-room" disabled>Leave /or close the room</button>
 
@@ -80,12 +79,6 @@ document.getElementById('btn-leave-room').onclick = function() {
 // ......................................................
 // ................FileSharing/TextChat Code.............
 // ......................................................
-document.getElementById('share-file').onclick = function() {
-    var fileSelector = new FileSelector();
-    fileSelector.selectSingleFile(function(file) {
-        connection.send(file);
-    });
-};
 document.getElementById('input-text-chat').onkeyup = function(e) {
     if (e.keyCode != 13) return;
     // removing trailing/leading whitespace
@@ -155,7 +148,6 @@ connection.onstreamended = function(event) {
 connection.onmessage = appendDIV;
 connection.filesContainer = document.getElementById('file-container');
 connection.onopen = function() {
-    document.getElementById('share-file').disabled = false;
     document.getElementById('input-text-chat').disabled = false;
     document.getElementById('btn-leave-room').disabled = false;
     document.querySelector('h1').innerHTML = 'You are connected with: ' + connection.getAllParticipants().join(', ');
@@ -168,10 +160,8 @@ connection.onclose = function() {
     }
 };
 connection.onEntireSessionClosed = function(event) {
-    document.getElementById('share-file').disabled = true;
     document.getElementById('input-text-chat').disabled = true;
-    document.getElementById('btn-leave-room').disabled = true;
-    
+    document.getElementById('btn-leave-room').disabled = true;    
     document.getElementById('open-room').disabled = false;
     document.getElementById('join-room').disabled = false;
     document.getElementById('room-id').disabled = false;
