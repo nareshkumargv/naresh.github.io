@@ -54,32 +54,11 @@ window.enableAdapter = true; // enable adapter.js
 // .......................UI Code........................
 // ......................................................
 
-  document.getElementById('share-screen').onclick = function() {
-                this.disabled = true;
-                connection.addStream({
-                    screen: true,
-                    oneway: true
-                });
-            };
-
-document.getElementById('open-room').onclick = function() {
-    disableInputButtons();
-    connection.open(document.getElementById('room-id').value, function() {
-        showRoomURL(connection.sessionid);
-    });
-};
 document.getElementById('join-room').onclick = function() {
-    disableInputButtons();
+   // disableInputButtons();
     connection.join(document.getElementById('room-id').value);
 };
-document.getElementById('open-or-join-room').onclick = function() {
-    disableInputButtons();
-    connection.openOrJoin(document.getElementById('room-id').value, function(isRoomExists, roomid) {
-        if (!isRoomExists) {
-            showRoomURL(roomid);
-        }
-    });
-};
+
 document.getElementById('btn-leave-room').onclick = function() {
     this.disabled = true;
     if (connection.isInitiator) {
@@ -95,12 +74,7 @@ document.getElementById('btn-leave-room').onclick = function() {
 // ......................................................
 // ................FileSharing/TextChat Code.............
 // ......................................................
-document.getElementById('share-file').onclick = function() {
-    var fileSelector = new FileSelector();
-    fileSelector.selectSingleFile(function(file) {
-        connection.send(file);
-    });
-};
+
 document.getElementById('input-text-chat').onkeyup = function(e) {
     if (e.keyCode != 13) return;
     // removing trailing/leading whitespace
