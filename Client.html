@@ -19,7 +19,7 @@
 
   <section class="make-center">
     <input type="text" id="room-id" value="abcdef" autocorrect=off autocapitalize=off size=20>
-    <button id="open-room">Open Room</button>
+   
     <button id="join-room">Join Room</button>
     
     <br><br>
@@ -53,12 +53,7 @@ window.enableAdapter = true; // enable adapter.js
 // ......................................................
 // .......................UI Code........................
 // ......................................................
-document.getElementById('open-room').onclick = function() {
-    disableInputButtons();
-    connection.open(document.getElementById('room-id').value, function() {
-        showRoomURL(connection.sessionid);
-    });
-};
+
 document.getElementById('join-room').onclick = function() {
     disableInputButtons();
     connection.join(document.getElementById('room-id').value);
@@ -162,7 +157,7 @@ connection.onclose = function() {
 connection.onEntireSessionClosed = function(event) {
     document.getElementById('input-text-chat').disabled = true;
     document.getElementById('btn-leave-room').disabled = true;    
-    document.getElementById('open-room').disabled = false;
+  
     document.getElementById('join-room').disabled = false;
     document.getElementById('room-id').disabled = false;
     connection.attachStreams.forEach(function(stream) {
@@ -176,9 +171,8 @@ connection.onUserIdAlreadyTaken = function(useridAlreadyTaken, yourNewUserId) {
     // seems room is already opened
     connection.join(useridAlreadyTaken);
 };
-function disableInputButtons() {
-   
-    document.getElementById('open-room').disabled = true;
+function disableInputButtons() {   
+    
     document.getElementById('join-room').disabled = true;
     document.getElementById('room-id').disabled = true;
 
