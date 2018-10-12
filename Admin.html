@@ -137,8 +137,8 @@ connection.session = {
     data: true
 };
 connection.sdpConstraints.mandatory = {
-    OfferToReceiveAudio: true,
-    OfferToReceiveVideo: true
+    OfferToReceiveAudio: false,
+    OfferToReceiveVideo: false
 };
 connection.videosContainer = document.getElementById('videos-container');
 connection.onstream = function(event) {
