@@ -1,3 +1,17 @@
+//html
+<p-dropdown [options]="venuetypesList_itm" placeholder="Selezionare" [(ngModel)]="venuetypesList_itm"> </p-dropdown>
+
+//ts
+        this._venuetypeservice.getVenueTypes().subscribe(vres => {
+            this.venuetypesList = vres;
+            console.log(this.venuetypesList);
+
+            this.venuetypesList_itm = [];
+            for (let v of this.venuetypesList) {
+                this.venuetypesList_itm.push({ label: v.label, value: v.value })
+            }
+
+        });
 
 //error -- Must declare the scalar variable "@id"
 
