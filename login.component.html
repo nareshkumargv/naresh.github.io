@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <div class="container">
+<h1>
+  Login works!
+</h1>
+
+<ul class="list">
+    <li *ngFor="let l of list | slice : startPage:paginationLimit">{{l.name}} ({{l.age}})</li>
+</ul>
+<button class="show-more-btn" *ngIf ="paginationLimit < list.length" (click)="showMoreItems()">Show More</button>
+<button  class="show-more-btn" *ngIf ="paginationLimit > 5+1" (click)="showLessItems()">Show Less</button>
+
+</div>
+</body>
+</html>
