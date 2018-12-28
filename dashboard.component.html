@@ -1,0 +1,10 @@
+<div class="container">
+    <div class="col-md-6 col-md-offset-3 loginBox">
+        Welcome,  {{id}}
+        <a href="javascript:void(0);" (click)="logout()">Logout</a>
+    </div>
+</div>
+
+<form [formGroup]="dashboardForm">
+    <input type="text" class="form-control" formControlName="userid" />
+</form>
