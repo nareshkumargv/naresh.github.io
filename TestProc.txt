@@ -1,0 +1,9 @@
+
+CREATE PROCEDURE [dbo].[TestProc] @IDList varchar(5000)
+ AS    
+BEGIN    
+select * from TestTable
+where ID in (select * from [UniversalPortal].[dbo].[SplitByCharacter](@IDList,',')) 
+END 
+GO
+
