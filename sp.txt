@@ -1,0 +1,25 @@
+create procedure insertimages
+@imagepaths  varchar(max)
+as
+
+begin
+
+set @imagepaths = 'c:\abc,c:\def'
+DECLARE @XML XML
+SET @XML = CAST(
+    ('<i>' + REPLACE(@imagepaths, ',', '</i><i>') + '</i>')
+    AS XML)
+
+create table #tempimagepaths(imagepath varchar(500))
+
+insert into #tempimagepaths
+SELECT t.i.value('.', 'VARCHAR(MAX)') 
+FROM @XML.nodes('i') AS t(i)
+WHERE t.i.value('.', 'VARCHAR(MAX)') <> ''
+
+
+select * from #tempimagepaths
+
+end
+this is the SP : which takes input as : set @imagepaths = 'c:\abc,c:\def'
+then will print the out[ut
