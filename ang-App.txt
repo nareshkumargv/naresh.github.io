@@ -2,3 +2,7 @@ https://github.com/duluca/lemon-mart
 https://www.kashipara.com/project/angular-js/3433/online-shopping-using-angular
 
 https://stackblitz.com/edit/multiple-filters-kfykcy
+
+password Reset
+https://www.codementor.io/olatundegaruba/password-reset-using-jwt-ag2pmlck0
+https://www.smashingmagazine.com/2017/11/safe-password-resets-with-json-web-tokens/
