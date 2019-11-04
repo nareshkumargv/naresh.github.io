@@ -1,0 +1,87 @@
+CREATE procedure [dbo].[spAddClientExtras]         
+    (        
+        @Clientid VARCHAR(450),
+		@Cfacilityid INTEGER,
+		@cfacilityname VARCHAR(50),
+		@cfacilityicon VARCHAR(50),
+		@Description VARCHAR(max),
+		@Price decimal(18,0)
+    )        
+    as         
+    Begin         
+        Insert into clientextras (clientid,cfacilityid,cfacilityname,cfacilityicon,description,price) 
+		    Values (@Clientid,@Cfacilityid,@cfacilityname,@cfacilityicon,@Description,@Price)     End
+----------------------------------------------
+ClientExtrasDataAccessLayer.cs
+
+//To Add new catering facility record   
+        public int AddClientExtras(ClientExtras clientextras)
+        {
+            try
+            {
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    SqlCommand cmd = new SqlCommand("spAddClientExtras", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@clientid", clientextras.Clientid);
+                    cmd.Parameters.AddWithValue("@Cfacilityid", clientextras.Cfacilityid);
+                    cmd.Parameters.AddWithValue("@Cfacilityname", clientextras.Cfacilityname);
+                    cmd.Parameters.AddWithValue("@Cfacilityicon", clientextras.Cfacilityicon);
+                    cmd.Parameters.AddWithValue("@Description", clientextras.Description);
+                    cmd.Parameters.AddWithValue("@Price", clientextras.Price);
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                }
+                return 1;
+            }
+            catch
+            {
+                throw;
+            }
+        }
+--------------------------------------------------------
+ClientExtrasController.cs
+[HttpPost]
+        [Route("api/clientextras/Create")]
+        public int Create([FromBody] ClientExtras clientextras)
+        {
+            return objclientextras.AddClientExtras(clientextras);
+        }
+-------------------------------------------------------------------
+clientextras.service.ts
+
+   saveclientextras(ClientExtras: any) {
+        console.log(ClientExtras);
+        return this._httpclient.post(this.BaseURI + 'api/clientextras/Create', ClientExtras);
+      }
+--------------------------------------------------------------------------------------
+//To Add new client facilties record   
+        public int AddClientFacilities(ClientFacilities clientfacilities)
+        {
+            try
+            {
+                for (int i = 0; i < clientfacilities.length; i++)
+                {
+                    using (SqlConnection con = new SqlConnection(connectionString))
+                    {
+                        SqlCommand cmd = new SqlCommand("spAddClientFacilities", con);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@Cid", clientfacilities.Cid);
+                        //cmd.Parameters.AddWithValue("@Facilityid", clientfacilities.Facilityid);
+                     cmd.Parameters.AddWithValue("@Facilityid", clientfacilities.Facilityid[i]);
+
+                    con.Open();
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+                    }
+                }
+
+                return 1;
+            }
+            catch
+            {
+                throw;
+            }
+        }
