@@ -3,6 +3,11 @@ https://www.kashipara.com/project/angular-js/3433/online-shopping-using-angular
 
 https://stackblitz.com/edit/multiple-filters-kfykcy
 
-password Reset
+password reset
 https://www.codementor.io/olatundegaruba/password-reset-using-jwt-ag2pmlck0
 https://www.smashingmagazine.com/2017/11/safe-password-resets-with-json-web-tokens/
+https://nodemailer.com/about/ -Nodemailer send email
+http://javascript.tutorialhorizon.com/2015/07/02/send-email-node-js-express/
+password reset nodemailer - https://www.npmjs.com/package/password-reset-nodemailer
+http://sahatyalkabov.com/how-to-implement-password-reset-in-nodejs/ - tutorial
+http://www.scotchmedia.com/tutorials/express/authentication/3/02 - Nodemsiler package reset password email
