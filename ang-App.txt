@@ -11,3 +11,6 @@ http://javascript.tutorialhorizon.com/2015/07/02/send-email-node-js-express/
 password reset nodemailer - https://www.npmjs.com/package/password-reset-nodemailer
 http://sahatyalkabov.com/how-to-implement-password-reset-in-nodejs/ - tutorial
 http://www.scotchmedia.com/tutorials/express/authentication/3/02 - Nodemsiler package reset password email
+
+
+https://www.djamware.com/post/5cc6624980aca754f7a9d1f3/asp-net-core-sql-server-and-angular-7-web-app-authentication
