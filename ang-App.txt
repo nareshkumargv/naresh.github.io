@@ -15,3 +15,9 @@ http://www.scotchmedia.com/tutorials/express/authentication/3/02 - Nodemsiler pa
 https://hackernoon.com/how-to-reset-password-with-nodejs-and-angular-part-2-6815t3z8v
 
 https://www.djamware.com/post/5cc6624980aca754f7a9d1f3/asp-net-core-sql-server-and-angular-7-web-app-authentication
+
+11-11-2019
+https://www.taniarascia.com/how-to-use-local-storage-with-javascript/
+https://code4developers.com/local-storage-session-storage/
+https://javascript.info/localstorage
+https://medium.com/front-end-weekly/learn-using-jwt-with-passport-authentication-9761539c4314
