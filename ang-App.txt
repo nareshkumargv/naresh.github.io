@@ -1,3 +1,8 @@
+14-11-2019
+https://hackernoon.com/how-to-reset-password-with-nodejs-and-angular-part-2-6815t3z8v
+
+https://stackoverflow.com/jobs/165218/front-end-developer-ubiquisoft-technologies?so=i&pg=1&offset=22&so_medium=Internal&so_source=JobSearch&r=true
+------------------------------------------
 13-11-2019
 https://crbtech.in/dot-net-training/asp-net-core-identity-allows-password-reset
 http://www.binaryintellect.net/articles/df920caf-ba69-4714-938f-fbb358532c0f.aspx
