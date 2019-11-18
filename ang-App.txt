@@ -1,6 +1,6 @@
 18-11-2019
-
 https://hintdesk.com/2016/02/05/asp-net-web-api-identity-and-forgot-password/
+https://www.c-sharpcorner.com/article/asp-net-core-2-0-identity/
 
 Insert multiple CheckBoxes
 https://www.aspsnippets.com/Articles/Save-Insert-multiple-CheckBoxes-CheckBoxList-values-to-database-in-ASPNet-MVC.aspx
