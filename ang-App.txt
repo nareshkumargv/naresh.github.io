@@ -1,3 +1,7 @@
+18-11-2019
+https://docs.microsoft.com/en-us/aspnet/mvc/overview/security/create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset
+https://docs.microsoft.com/en-us/aspnet/identity/overview/features-api/account-confirmation-and-password-recovery-with-aspnet-identity
+
 14-11-2019
 https://hackernoon.com/how-to-reset-password-with-nodejs-and-angular-part-2-6815t3z8v
 
