@@ -1,7 +1,37 @@
 18-11-2019
+Insert multiple CheckBoxes
+https://www.aspsnippets.com/Articles/Save-Insert-multiple-CheckBoxes-CheckBoxList-values-to-database-in-ASPNet-MVC.aspx
+http://www.gunaatita.com/Blog/Send-multiple-checkbox-values-from-view-to-controller-in-MVC/1047
+https://blog.ysatech.com/post/2018/04/13/angular-5-reactive-forms-with-dynamic-formarray-and-simple-validation
+http://www.aspmantra.com/2013/05/how-to-insert-multiple-checkboxlist.html
+
+file upload
+https://www.c-sharpcorner.com/article/how-to-upload-multiple-image-using-angular7/
+https://code-maze.com/upload-files-dot-net-core-angular/
+https://www.talkingdotnet.com/upload-file-angular-5-asp-net-core-2-1-web-api/
+http://sudiptachaudhari.com/angular-4-multiple-file-upload-using-asp-net-web-api/
+https://www.codemag.com/Article/1901061/Upload-Small-Files-to-a-Web-API-Using-Angular
+https://www.techiediaries.com/angular-file-upload-progress-bar/
+https://www.tutsmake.com/new-angular-7-upload-file-image-example/
+https://appdividend.com/2018/05/25/angular-6-file-upload-tutorial/
+
+-------------------------------------
+
+Yes, you can use google map api key without credit card, with this link:
+https://console.developers.google.com/projectselector2/projectselector/apis/dashboard?supportedpurview=project
+https://nearplace.com/blog/how-to-generate-google-map-api-key-for-free/
+
+
+Your MSDN subscriber details 	
+First name: 	Naresh 
+Last name: 	Gundu 
+Email: 	Naresh.Gundu@broadridge.com 
+
+Subscriber ID: 	MVL3LLQQLN47 
+Subscription level: 	Visual Studio Professional with MSDN 
 https://docs.microsoft.com/en-us/aspnet/mvc/overview/security/create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset
 https://docs.microsoft.com/en-us/aspnet/identity/overview/features-api/account-confirmation-and-password-recovery-with-aspnet-identity
-
+------------------------------------------
 14-11-2019
 https://hackernoon.com/how-to-reset-password-with-nodejs-and-angular-part-2-6815t3z8v
 
