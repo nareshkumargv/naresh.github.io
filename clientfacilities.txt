@@ -1,0 +1,392 @@
+Model:
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace WebAPI.Models
+{
+    public class ClientFacilities
+    {
+        public int ID { get; set; }
+        public string Cid { get; set; }
+        public int Facilityid { get; set; }
+    }
+}
+------------------------------------------------------------
+DataAccessLayer:
+using System;
+using System.IO;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Data;
+using System.Data.SqlClient;
+
+namespace WebAPI.Models
+{
+    public class ClientFacilitiesDataAccessLayer
+    {
+        string connectionString = "Server=LAPTOP-PHESSR5K\\SQLEXPRESS;Database=UserDB;Trusted_Connection=True;MultipleActiveResultSets=true";
+
+        //To View all Client Facilties details  
+        public IEnumerable<ClientFacilities> GetAllClientFacilities()
+        {
+            try
+            {
+                List<ClientFacilities> lstclientfacilties = new List<ClientFacilities>();
+
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    SqlCommand cmd = new SqlCommand("spGetAllClientFacilities", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    con.Open();
+                    SqlDataReader rdr = cmd.ExecuteReader();
+
+                    while (rdr.Read())
+                    {
+                        ClientFacilities clientfacilities = new ClientFacilities();
+
+                        clientfacilities.ID = Convert.ToInt32(rdr["ID"]);
+                        clientfacilities.Cid = rdr["Cid"].ToString();                        
+                        //clientfacilities.Facilityid = Convert.ToInt32(rdr["Facilityid"]);                    
+                        lstclientfacilties.Add(clientfacilities);
+                    }
+                    con.Close();
+                }
+                return lstclientfacilties;
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        //To Add new client facilties record   
+        //public int AddClientFacilities(List<ClientFacilities> clientfacilities)
+        //{
+        //    try
+        //    {
+        //        for (int i = 0; i < clientfacilities.Count(); i++)
+        //        {
+        //            using (SqlConnection con = new SqlConnection(connectionString))
+        //            {
+        //                SqlCommand cmd = new SqlCommand("spAddClientFacilities", con);
+        //                cmd.CommandType = CommandType.StoredProcedure;
+        //                cmd.Parameters.AddWithValue("@Cid", clientfacilities.Cid);                        
+        //                cmd.Parameters.AddWithValue("@Facilityid", clientfacilities.Facilityid[i]);
+
+        //                con.Open();
+        //                cmd.ExecuteNonQuery();
+        //                con.Close();
+
+        //            }
+        //        }
+
+        //        return 1;
+        //    }
+        //    catch
+        //    {
+        //        throw;
+        //    }
+        //}
+
+        public int AddClientFacilities(ClientFacilities clientfacilities)
+        {
+            try
+            {
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    SqlCommand cmd = new SqlCommand("spAddClientFacilities", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@Cid", clientfacilities.Cid);
+                    cmd.Parameters.AddWithValue("@Facilityid", clientfacilities.Facilityid);
+
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                }
+                return 1;
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        //To Update the records of a particluar client facility  
+        public int UpdateClientFacilities(ClientFacilities clientfacilities)
+        {
+            try
+            {
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    SqlCommand cmd = new SqlCommand("spUpdateClientFacilities", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@Id", clientfacilities.ID);
+                    cmd.Parameters.AddWithValue("@Cid", clientfacilities.Cid);
+                    cmd.Parameters.AddWithValue("@Facilityid", clientfacilities.Facilityid);
+
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                }
+                return 1;
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        //Get the details of a particular client Facilities  
+        public ClientFacilities GetClientFacilitiesData(int id)
+        {
+            try
+            {
+                ClientFacilities clientfacilities = new ClientFacilities();
+
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    string sqlQuery = "SELECT * FROM clientfacilities WHERE id= " + id;
+                    SqlCommand cmd = new SqlCommand(sqlQuery, con);
+
+                    con.Open();
+                    SqlDataReader rdr = cmd.ExecuteReader();
+
+                    while (rdr.Read())
+                    {
+                        clientfacilities.ID = Convert.ToInt32(rdr["id"]);
+                        clientfacilities.Cid = rdr["Cid"].ToString();                       
+                        //clientfacilities.Facilityid = Convert.ToInt32(rdr["Facilityid"]);
+                    }
+                }
+                return clientfacilities;
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        //To Delete the record on a particular client facilitiy  
+        public int DeleteClientFacilities(int id)
+        {
+            try
+            {
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    SqlCommand cmd = new SqlCommand("spDeleteClientFacilities", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@Id", id);
+
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                }
+                return 1;
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+
+    }
+}
+----------------------------------------------------------------------------------------
+Controller:
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using System.Data.SqlClient;
+using System.Data;
+using WebAPI.Models;
+
+namespace WebAPI.Controllers
+{
+    public class ClientFacilitiesController : Controller
+    {
+        ClientFacilitiesDataAccessLayer objclientfacilities = new ClientFacilitiesDataAccessLayer();
+
+        // GET: api/<controller>
+        [HttpGet]
+        [Route("api/clientfacilities/Index")]
+        public IEnumerable<ClientFacilities> Get()
+        {
+            return objclientfacilities.GetAllClientFacilities();
+        }
+
+        [HttpPost]
+        [Route("api/clientfacilities/Create")]
+        public int Create([FromBody] ClientFacilities clientfacilities)
+        {
+              return objclientfacilities.AddClientFacilities(clientfacilities);
+
+            //for (int i = 1; i <= clientfacilities.Count(); i++)
+            //{
+            //    returnobjclientfacilities.AddClientFacilities(clientfacilities[i]);
+            //}
+
+        }
+
+        [HttpGet]
+        [Route("api/clientfacilities/Details/{id}")]
+        public ClientFacilities Details(int id)
+        {
+            return objclientfacilities.GetClientFacilitiesData(id);
+        }
+
+        [HttpPut]
+        [Route("api/clientfacilities/Edit")]
+        public int Edit([FromBody] ClientFacilities clientfacilities)
+        {
+            return objclientfacilities.UpdateClientFacilities(clientfacilities);
+        }
+
+        [HttpDelete]
+        [Route("api/clientfacilities/Delete/{id}")]
+        public int Delete(int id)
+        {
+            return objclientfacilities.DeleteClientFacilities(id);
+        }
+    }
+}
+-------------------------------------------------------------
+addclientfacilities.ts
+import { Component, OnInit } from '@angular/core';  
+import { Http, Headers } from '@angular/http';  
+import { NgForm, FormBuilder, FormGroup, Validators, FormControl,FormArray,ValidatorFn,AbstractControl } from '@angular/forms';
+import { Router, ActivatedRoute } from '@angular/router'; 
+
+import { UserService } from './../../shared/user.service';
+import { FacilitiesService } from './../../shared/facilities.service';
+import { ClientFacilitiesService } from './../../shared/clientfacilities.service';
+
+@Component({  
+    selector: 'addclientfacilities',  
+    templateUrl: './addcfacilities.component.html',
+    providers:[FacilitiesService,ClientFacilitiesService]
+})
+
+export class AddClientFacilities implements OnInit { 
+    userDetails;
+    public clientname: any;  
+    public selecteduser:any;
+    public selectedclient : Client[];
+    public selectedclientid: any;
+
+    public facilitieslist: Facilities[] = [];     
+    public userlist:Users[] = [];
+    facilitiesForm:FormGroup;
+    title: string = "Create";  
+    id: number;  
+    errorMessage: any;
+    
+    constructor(private _router: Router, private _fb: FormBuilder, private _avRoute: ActivatedRoute,
+        private _userservice: UserService,
+        private _facilitiesservice: FacilitiesService,
+        private _clientfacilitiesservice: ClientFacilitiesService) {
+            if (this._avRoute.snapshot.params["id"]) {  
+                this.id = this._avRoute.snapshot.params["id"];  
+            }  
+    this.facilitiesForm = this._fb.group({
+            id:0,
+            Cid: [''],
+            facilities: this._fb.array([])
+        });  
+    }
+
+    ngOnInit() {
+    this.getFacilitieslist();
+
+    this.clientname = localStorage.getItem('cname');   
+    //console.log(this.clientname); 
+    this.selecteduser = localStorage.getItem('clientid');
+    console.log(this.selecteduser); 
+
+    this._userservice.getUserProfile().subscribe((res:Client[]) => {
+        this.selectedclient = res;
+      //  console.log(this.selectedclient);        
+        this.selectedclientid = this.selectedclient['id'];
+      //  console.log(this.selectedclientid);
+        });
+
+        this.facilitiesForm.controls.Cid.setValue(this.selecteduser);
+
+        if (this.id > 0) {  
+            this.title = "Edit";  
+            this._clientfacilitiesservice.getClientFacilitiesById(this.id)  
+                .subscribe(resp => this.facilitiesForm.setValue(resp)  
+                , error => this.errorMessage = error);  
+        }  
+
+    }
+
+    public getFacilitieslist() {
+        this._facilitiesservice.getFacilities().subscribe((data: Facilities[]) => {
+        this.facilitieslist = data;
+        })
+    }
+    
+    onChange(fid:number,sfacility: string, isChecked: boolean) {
+        const FacilitiesFormArray = <FormArray>this.facilitiesForm.controls.facilities;
+    
+        if (isChecked) {
+          FacilitiesFormArray.push(new FormControl(fid));
+        } else {
+          let index = FacilitiesFormArray.controls.findIndex(x => x.value == fid)
+          FacilitiesFormArray.removeAt(index);
+        }
+    }
+
+    savefacilities() {
+        if (!this.facilitiesForm.valid) {  
+            return;  
+        }
+
+        if (this.title == "Create") {  
+             alert('test save');
+            this._clientfacilitiesservice.saveClientFacilities(this.facilitiesForm.value)  
+                .subscribe((data) => {  
+                    this._router.navigate(['/client/cfacilities']);  
+                }, error => this.errorMessage = error)  
+        }  
+        else if (this.title == "Edit") {  
+            this._clientfacilitiesservice.updateClientFacilities(this.facilitiesForm.value)  
+                .subscribe((data) => {  
+                    this._router.navigate(['/client/cfacilities']);  
+                }, error => this.errorMessage = error)   
+        }  
+
+    }
+
+   // get Cid() { return this.facilitiesForm.get('Cid'); } 
+   // get Cid() { return this.selectedclientid }  
+  // get Cid() { return this.facilitiesForm.get('Cid').setValue(this.selectedclientid);}  
+    get Facilityid() { return this.facilitiesForm.get('Facilityid'); }
+    
+}
+
+export class Users {
+    constructor(public id: number, public UserName: string) { }
+};
+export class Facilities {
+    constructor(public id: number, public Facilityname: string, Facilityicon: string) { }
+};
+
+export class Client {
+    constructor(
+      public id: number,    
+      public fullName: string, 
+      public userName: string, 
+      public email:string, 
+      public phoneNumber:string) { }
+  };
