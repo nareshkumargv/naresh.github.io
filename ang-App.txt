@@ -1,5 +1,6 @@
 29-11-2019
 https://jakeydocs.readthedocs.io/en/latest/security/authentication/accconfirm.html
+https://medium.com/@scottkuhl/starting-a-new-asp-net-core-2-2-c-project-with-visual-studio-2017-5346ceb5fd7a
 -------------------------------------
 19-11-2019
 https://dotnetdetail.net/how-to-add-authentication-to-angular-7-and-asp-net-core-3-using-vs2019/
