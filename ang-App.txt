@@ -1,3 +1,7 @@
+05-12-2019
+https://dev.azure.com/techhowdy/_git/NG_Core_Auth
+https://docs.microsoft.com/en-us/aspnet/identity/overview/features-api/account-confirmation-and-password-recovery-with-aspnet-identity
+-------------------------------------
 29-11-2019
 https://jakeydocs.readthedocs.io/en/latest/security/authentication/accconfirm.html
 https://medium.com/@scottkuhl/starting-a-new-asp-net-core-2-2-c-project-with-visual-studio-2017-5346ceb5fd7a
