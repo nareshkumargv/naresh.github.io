@@ -1,9 +1,12 @@
+06-12-2019
+https://stackoverflow.com/jobs/332208/software-engineering-ui-angular-jp-morgan-chase?so_medium=Ad&so_source=JobAd&so_campaign=LocationOrange
+https://stackoverflow.com/jobs/326713/consultant-senior-ui-developer-genpact?so_medium=Internal&so_source=SimilarJobsSidebar
+-------------------------------------
 05-12-2019
 https://dev.azure.com/techhowdy/_git/NG_Core_Auth
 https://docs.microsoft.com/en-us/aspnet/identity/overview/features-api/account-confirmation-and-password-recovery-with-aspnet-identity
 https://medium.com/@scottkuhl/extending-asp-net-core-2-2-identity-management-c3cc657cc448
 http://www.binaryintellect.net/articles/df920caf-ba69-4714-938f-fbb358532c0f.aspx
-
 Prevent login when EmailConfirmed is false
 https://stackoverflow.com/questions/22153921/prevent-login-when-emailconfirmed-is-false
 -------------------------------------
