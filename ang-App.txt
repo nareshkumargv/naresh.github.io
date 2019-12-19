@@ -1,3 +1,6 @@
+19-12-2019
+https://csharp.christiannagel.com/2018/07/18/identitypages/
+
 06-12-2019
 https://stackoverflow.com/jobs/332208/software-engineering-ui-angular-jp-morgan-chase?so_medium=Ad&so_source=JobAd&so_campaign=LocationOrange
 https://stackoverflow.com/jobs/326713/consultant-senior-ui-developer-genpact?so_medium=Internal&so_source=SimilarJobsSidebar
