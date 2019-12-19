@@ -1,5 +1,6 @@
 19-12-2019
 https://csharp.christiannagel.com/2018/07/18/identitypages/
+https://kenhaggerty.com/articles/article/aspnet-core-22-scaffold-identity-ui
 
 06-12-2019
 https://stackoverflow.com/jobs/332208/software-engineering-ui-angular-jp-morgan-chase?so_medium=Ad&so_source=JobAd&so_campaign=LocationOrange
