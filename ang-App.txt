@@ -1,3 +1,9 @@
+20-12-2019
+https://www.codeproject.com/Articles/1272172/Require-Confirmed-Email-in-ASP-NET-Core-2-2-Part-1
+https://www.codeproject.com/Articles/1272510/Require-Confirmed-Email-in-Asp-Net-Core-2-2-Part-2
+https://medium.com/@kevinrodrguez/enabling-email-verification-in-asp-net-core-identity-ui-2-1-b87f028a97e0
+https://fullstackmark.com/post/13/jwt-authentication-with-aspnet-core-2-web-api-angular-5-net-core-identity-and-facebook-login
+-------------------------------------
 19-12-2019
 https://csharp.christiannagel.com/2018/07/18/identitypages/
 https://kenhaggerty.com/articles/article/aspnet-core-22-scaffold-identity-ui
