@@ -1,3 +1,9 @@
+06-02-2020
+https://mlab.com/
+nareshkumar.gv@gmail.com/Naresh1234
+https://www.freecodecamp.org/news/securing-node-js-restful-apis-with-json-web-tokens-9f811a92bb52/
+https://github.com/adnanrahic/securing-restful-apis-with-jwt
+-------------------------------------
 31-01-2020
 https://stackoverflow.com/jobs/326696/consultant-ui-developer-genpact
 -------------------------------------
