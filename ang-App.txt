@@ -1,3 +1,8 @@
+12-02-2020
+https://visualstudio.microsoft.com/vs/preview/
+https://www.smashingmagazine.com/2017/11/safe-password-resets-with-json-web-tokens/
+https://dotnetdetail.net/how-to-add-authentication-to-angular-7-and-asp-net-core-3-using-vs2019/
+--------------------------
 06-02-2020
 https://mlab.com/
 nareshkumar.gv@gmail.com/Naresh1234
