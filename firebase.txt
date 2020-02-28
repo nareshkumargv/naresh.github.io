@@ -1,0 +1,22 @@
+https://codingthesmartway.com/building-an-angular-5-project-with-bootstrap-4-and-firebase/
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDUagzMGqXJ6wMQtoN1ujDiz1i1mLwGNzc",
+    authDomain: "mystore-ff1f3.firebaseapp.com",
+    databaseURL: "https://mystore-ff1f3.firebaseio.com",
+    projectId: "mystore-ff1f3",
+    storageBucket: "mystore-ff1f3.appspot.com",
+    messagingSenderId: "1061940225348",
+    appId: "1:1061940225348:web:442e7d93121c9fa585e311"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
