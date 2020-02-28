@@ -1,4 +1,8 @@
 https://codingthesmartway.com/building-an-angular-5-project-with-bootstrap-4-and-firebase/
+****https://www.positronx.io/full-angular-7-firebase-authentication-system/
+https://www.positronx.io/create-angular-7-firebase-crud-app-with-angular-material-7/
+https://www.codaffection.com/angular-tutorial/angular-7-crud-with-firestore/
+https://www.techiediaries.com/angular-firebase/angular-9-firebase-authentication-email-google-and-password/
 
 <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-app.js"></script>
