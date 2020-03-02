@@ -4,6 +4,11 @@ https://www.positronx.io/create-angular-7-firebase-crud-app-with-angular-materia
 https://www.codaffection.com/angular-tutorial/angular-7-crud-with-firestore/
 https://www.techiediaries.com/angular-firebase/angular-9-firebase-authentication-email-google-and-password/
 https://angular-templates.io/tutorials/about/angular-crud-with-firebase
+
+https://www.tutorialspoint.com/e_commerce_web_with_angular_8_material_and_firebase_in_2020/index.asp
+https://medium.com/javascript-in-plain-english/how-to-create-an-app-using-angular-and-firebase-part-1-debb80f928ad
+https://medium.com/javascript-in-plain-english/how-to-create-an-app-with-firebase-and-angular-part-2-79063adebab9
+https://github.com/darkslayer92/E-Commerce-Application-Nodejs-Angular-8-MYSQL
 ---------------------------------
 <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-app.js"></script>
