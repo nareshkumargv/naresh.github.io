@@ -1,0 +1,383 @@
+{
+   "boards":[
+        {
+        "id": 1,
+        "name": "Board 1"
+        },
+        {
+            "id": 2,
+            "name": "Board 2"
+        },
+        {
+            "id": 3,
+            "name": "Board 3"
+        }
+    ],
+    "states":[
+        {
+        "id":1,
+        "name":"TS"
+        },
+        {
+        "id":2,
+        "name":"AP"
+        },
+        {
+        "id":3,
+        "name":"Delhi"
+        }
+    ],
+    "cities":[
+        {
+        "id": 1,
+        "sid":1,
+        "name": "Hyderabad"
+        },
+        {
+        "id": 2,
+        "sid":1,
+        "name": "Sec-bad"
+        },
+        {
+        "id": 3,
+        "sid":2,
+        "name": "Amaravathi"
+        },
+        {
+        "id": 4,
+        "sid":3,
+        "name": "Delhi"
+        }
+    ],
+    "schools":[
+        {
+        "id": 1,
+        "bid":1,
+        "sid":1,    
+        "cid":1,    
+        "sname": "School 1"
+        },
+        {
+            "id": 2,
+            "bid":1,
+            "sid":1,    
+            "cid":1,    
+            "sname": "School 4"
+            },
+            {
+                "id": 3,
+                "bid":1,
+                "sid":1,    
+                "cid":1,    
+                "sname": "School 5"
+                },
+
+        {
+        "id": 2,
+        "bid":1,
+        "sid":1,    
+        "cid":2,    
+        "sname": "School 2"
+        },
+        {
+        "id": 3,
+        "bid":2,
+        "sid":1,    
+        "cid":1,    
+        "sname": "School 3"
+        }
+    ],
+    "schooldetails":[
+        {
+            "id": 1,
+            "bid":1,
+            "sid":1,    
+            "cid":1,    
+            "sname": "School 1",
+            "logo":"school1_logo",
+            "desc":"lorem ipsum is simply...."
+            },
+            {
+                "id": 2,
+                "bid":1,
+                "sid":2,    
+                "cid":1,    
+                "sname": "School 4",
+                "logo":"school4_logo",
+                "desc":"lorem ipsum is simply...."
+                },
+                {
+                    "id": 3,
+                    "bid":1,
+                    "sid":3,    
+                    "cid":1,    
+                    "sname": "School 5",
+                    "logo":"school5_logo",
+                    "desc":"lorem ipsum is simply...."
+                    }
+    ],
+    "classes":[
+        {
+        "id": 1,
+        "sid":1,
+        "name":"Class - 1"
+        },
+        {
+        "id": 2,
+        "sid":1,
+        "name":"Class - 2"
+        },
+        {
+        "id": 3,
+        "sid":1,
+        "name":"Class - 3"
+        },
+        {
+        "id": 4,
+        "sid":2,
+        "name":"Class - 3"
+        },
+        {
+        "id": 5,
+        "sid":2,
+        "name":"Class - 4"
+        }
+    ],
+    "classbooks":[
+        {
+        "id": 1,
+        "sid":1,
+        "classid":1,
+        "bookname": "ABC",
+        "bookimage":"abcd.png",
+        "bookprice":"100.00",
+        "publishername":"kits",
+        "language":1,
+        "category":3
+        },
+        {
+        "id": 2,
+        "sid":1,
+        "classid":1,
+        "bookname": "EFGH",
+        "bookimage":"abcd.png",
+        "bookprice":"200.00",
+        "publishername":"Oxford",
+        "language":1,
+        "category":3
+        },
+        {
+        "id": 3,
+        "sid":1,
+        "classid":1,
+        "bookname": "EFGHGGGG",
+        "bookimage":"abcd.png",
+        "bookprice":"500.00",
+        "publishername":"Oxford",
+        "language":2,
+        "category":3
+        },
+        {
+            "id": 4,
+            "sid":1,
+            "classid":1,
+            "bookname": "EFGHGGGG",
+            "bookimage":"abcd.png",
+            "bookprice":"500.00",
+            "publishername":"Oxford",
+            "language":2,
+            "category":1
+            },
+            {
+                "id": 5,
+                "sid":1,
+                "classid":1,
+                "bookname": "EFGHGGGG",
+                "bookimage":"abcd.png",
+                "bookprice":"500.00",
+                "publishername":"Oxford",
+                "language":2,
+                "category":1
+                },
+                {
+                    "id": 6,
+                    "sid":1,
+                    "classid":1,
+                    "bookname": "EFGHGGGG",
+                    "bookimage":"abcd.png",
+                    "bookprice":"500.00",
+                    "publishername":"Oxford",
+                    "language":2,
+                    "category":1
+                    },
+                    {
+                    "id": 7,
+                    "sid":1,
+                    "classid":1,
+                    "bookname": "EFGHGGGG",
+                    "bookimage":"abcd.png",
+                    "bookprice":"500.00",
+                    "publishername":"Oxford",
+                    "language":2,
+                    "category":2
+                    },
+                    {
+                    "id": 8,
+                    "sid":1,
+                    "classid":1,
+                    "bookname": "EFGHGGGG",
+                    "bookimage":"abcd.png",
+                    "bookprice":"500.00",
+                    "publishername":"Oxford",
+                    "language":2,
+                    "category":4
+                    },
+                    {
+                    "id": 9,
+                    "sid":1,
+                    "classid":1,
+                    "bookname": "EFGHGGGG",
+                    "bookimage":"abcd.png",
+                    "bookprice":"500.00",
+                    "publishername":"Oxford",
+                    "language":2,
+                    "category":4
+                    },
+                    {
+                    "id": 10,
+                    "sid":1,
+                    "classid":1,
+                    "bookname": "EFGHGGGG",
+                    "bookimage":"abcd.png",
+                    "bookprice":"500.00",
+                    "publishername":"Oxford",
+                    "language":2,
+                    "category":5
+                    }                           
+
+    ],
+    "languages":[
+        {
+            "id": 1,
+            "sid":1,
+            "classid":1,
+            "languagename": "English"
+        },
+        {
+            "id": 2,
+            "sid":1,
+            "classid":1,
+            "languagename": "Telugu"
+        },
+        {
+            "id": 3,
+            "sid":1,
+            "classid":1,
+            "languagename": "Hindi"
+        },
+        {
+            "id": 4,
+            "sid":1,
+            "classid":1,
+            "languagename": "Sanskrit"
+        },
+        {
+            "id": 5,
+            "sid":1,
+            "classid":2,
+            "languagename": "Sanskrit"
+        }
+
+    ],
+    "categories":[
+        {
+            "id": 1,            
+            "categoryname": "General"
+        },
+        {
+            "id": 2,            
+            "categoryname": "Reference"
+        },
+        {
+            "id": 3,            
+            "categoryname": "Academic"
+        },
+        {
+            "id": 4,            
+            "categoryname": "Children"
+        },
+        {
+            "id": 5,            
+            "categoryname": "Competitive"
+        }
+    ],
+    "books":[
+        {
+          "isbn": "c8fabf68-8374-48fe-a7ea-a00ccd07afff",
+          "title": "Henri Potier at the school of sorcerers",
+          "price": 35,
+          "cover": "http://henri-potier.xebia.fr/hp0.jpg",
+          "synopsis": [
+            "After the death of his parents (Lily and James Potter), Henry is collected by his aunt Petunia (Lily's sister) and his uncle Vernon at the age of one year.The latter, always animated by a hatred fierce towards the boy's parents whom they describe as 'weird' people, even 'monsters', coldly treat their nephew and remain indifferent to the humiliation of their son Dudley.Hen knows nothing about the history of his parents, except that they were killed in a car accident "
+          ]
+        },
+        {
+          "isbn": "a460afed-e5e7-4e39-a39d-c885c05db861",
+          "title": "Henri Potier and the Chamber of Secrets",
+          "price": 30,
+          "cover": "http://henri-potier.xebia.fr/hp1.jpg",
+          "synopsis": [
+            "Henri Potier spends the summer with the Dursleys and receives a visit from Dobby, a house elf, who warns him that strange events will soon be happening at Hogwarts and urges him not to return. Henri chooses to ignore this warning, and the day he leaves for school he gets stuck with Ron Weasley at King's Cross Station, unable to get to Pier 9, where the Hogwarts Express is waiting for him. As a result, the boys go to Hogwarts with Mr Weasley's flying car, and are quickly dismissed as soon as they arrive at school for being seen by several muggles during their trip. "
+          ]
+        },
+        {
+          "isbn": "fcd1e6fa-a63f-4f75-9da4-b560020b6acc",
+          "title": "Henri Potier and the Prisoner of Azkaban",
+          "price": 30,
+          "cover": "http://henri-potier.xebia.fr/hp2.jpg",
+          "synopsis": [
+            "During the summer, for his thirteenth birthday, Henry receives several cards from his friends, including a letter from Ron who writes him from Egypt, where he spends his holidays with his family.A letter from Professor McGonagall, Deputy Director of Hogwarts , informs him that third graders will have the opportunity to visit the village of Hogsmeade. ",
+            "The next day, the muggle TV news announces the escape of a very dangerous prisoner by the name of Sirius Black, and Henry's aunt and uncle are slightly concerned about themselves, and later tell Henri that the Aunt Marge will spend a week at home at Privet Drive, where Aunt Marge provokes Henry by treating his late father as a former drunkard.Hen gets angry, loses control of his magic and accidentally inflates Aunt Marge like a balloon. that his uncle, furious, orders Henri to return to Marge his normal appearance, the boy refuses and fled in the middle of the night, carrying his suitcase and his owl Edwige. ",
+            "Later, on the Traverse Road, Henry learns with surprise that Sirius Black has in fact escaped from Azkaban to find him, it seems that the man wants to kill Henry to allow Lord Voldemort, his master , to find the extent of his power. "
+          ]
+        },
+        {
+          "isbn": "c30968db-cb1d-442e-ad0f-80e37c077f89",
+          "title": "Henri Potier and the Cup of Fire",
+          "price": 29,
+          "cover": "http://henri-potier.xebia.fr/hp3.jpg",
+          "synopsis": [
+            "Just before attending the World Cup of Quidditch between teams from Ireland and Bulgaria, Henri Potier has a strange dream in which he witnesses the murder of an old muggle gardener by Voldemort, while the gardener was surprised a conversation about Henri. ",
+            "At the World Cup camp, right after the match, Death Eaters burst into the middle of the night and cause panic among the fans, showing the Dark Mark in the sky, and announcing the return of the dark wizard."
+          ]
+        },
+        {
+          "isbn": "78ee5f25-b84f-45f7-bf33-6c7b30f1b502",
+          "title": "Henri Potier and the Order of the Phoenix",
+          "price": 28,
+          "cover": "http://henri-potier.xebia.fr/hp4.jpg",
+          "synopsis": [
+            "To face Voldemort's return, members of the Order of the Phoenix, under the leadership of Albus Dumbledore, are gathered at 12 Square Grimmaurd in London, their headquarters.The Minister of Magic does not believe in the return The Sorcerer's Gazette helps to spread his ideas, especially by implying that Henry is a liar or that Dumbledore is losing his mind. "            
+          ]
+        },
+        {
+          "isbn": "cef179f2-7cbc-41d6-94ca-ecd23d9f7fd6",
+          "title": "Henri Potier and the Half-Blood Prince",
+          "price": 30,
+          "cover": "http://henri-potier.xebia.fr/hp5.jpg",
+          "synopsis": [
+            "Henry enters sixth grade at the Hogwarts School of Witchcraft, then comes into possession of a potion book bearing the word Ownership of the Half-Blood Prince and begins to learn about Voldemort's dark past. was still known as Tom Riddle. "
+          ]
+        },
+        {
+          "isbn": "bbcee412-be64-4a0c-bf1e-315977acd924",
+          "title": "Henri Potier and the Deathly Hallows",
+          "price": 35,
+          "cover": "http://henri-potier.xebia.fr/hp6.jpg",
+          "synopsis": [
+            "This year, Henry is 17 years old and does not return to Hogwarts school after Dumbledore's death.With Ron and Hermione he dedicates himself to the last mission entrusted by Dumbledore.The Dark Lord reigns supreme and stalking the faithful friends who are reduced to hiding from proofs to revelations, Henri's courage, choice and sacrifice will be decisive in the struggle against the forces of evil. "
+          ]
+        }
+      ]
+
+  }
