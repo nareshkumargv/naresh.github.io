@@ -1,3 +1,24 @@
+03-17-2020
+ <a [routerLink]="['/venuedetail/',venue.cid]">
+ {path: 'venuedetail/:cid', component: VenueDetailComponent },  
+
+<!---Constructor-->
+
+  this.sub = this.route.params.subscribe(params => {
+        this.cid = params['cid'];
+        console.log(this.cid);
+      });
+
+ this._venuesservice.getVenues().subscribe((sres: Venues[]) => {
+        this.venueslist = sres;
+        //console.log(this.venueslist);
+         this.selectedfdata = this.venueslist.filter((vdata) => vdata.cid == this.cid);
+         console.log(this.selectedfdata);      
+      });  
+
+<!---Constructor-->
+---------------------------------
+
 03-06-2020
 https://github.com/Pranav50/E-Commerce
 ---------------------------------
