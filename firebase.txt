@@ -1,6 +1,11 @@
 03-20-2020
 https://jasonwatmore.com/post/2016/12/08/angular-2-redirect-to-previous-url-after-login-with-auth-guard
 https://angular.io/start/start-data
+
+https://marketplace.visualstudio.com/items?itemName=msjsdiag.cordova-tools
+https://androidabcd.info/how-to-run-cordova-app-using-android-studio/
+https://www.exsquared.com/blog/building-a-cordova-android-application-from-scratch/
+
 ---------------------------------
 03-17-2020
  <a [routerLink]="['/venuedetail/',venue.cid]">
