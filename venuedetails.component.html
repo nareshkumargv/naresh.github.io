@@ -1,463 +1,866 @@
- <!-- Property Single Slider header -->
 <p *ngIf="!selectedfdata"><em>Loading...</em></p>
+
 <div *ngIf="selectedfdata">
-  <div *ngFor="let venue of selectedfdata">
-    <section class="osahan-slider">
-      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item" *ngFor="let image of clientimagegallery let i = index" [ngClass]="{'active' : i == 0}">
-            <img src="{{image.imageurl}}" class="d-block w-100" alt="...">
-          </div>
-        </div>
-        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-      </div>
-      <!--<div class="property-single-title">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-8 col-md-8">
-              <h1>{{ venue.id }}-{{ venue.title }}</h1>
-              <h6>
-                <i class="mdi mdi-home-map-marker"></i>{{ venue.address }},
-                <span *ngFor='let sloption of selectedsublocation'>{{ sloption.locname }}</span>,
-                <span *ngFor='let cityoption of selectedcity'>{{ cityoption.cityname }} - </span>,
-                <span *ngFor='let option of selectedstate'>{{ option.statename }}</span>,
-                {{ venue.zipcode }}
-              </h6>
-            </div>
-            <div class="col-lg-4 col-md-4 text-right">
-              <h6 class="mt-2">Price</h6>
-              <h2 class="text-primary"><span class="mdi mdi-currency-inr"></span>{{venue.hourprice}}<small>/Hour</small></h2>
-              <h2 class="text-primary"><span class="mdi mdi-currency-inr"></span>{{venue.dayprice}}<small>/Day</small></h2>
-            </div>
-          </div>
-          <hr>
-          <div class="row">
-            <div class="col-lg-8 col-md-8">
-              <p class="mt-1 mb-0"><strong>Username</strong> :{{ venue.username }} &nbsp;&nbsp; <strong>Add to favorites</strong> <i class="mdi mdi-heart text-danger"></i></p>
-            </div>
-            <div class="col-lg-4 col-md-4 text-right">
-              <div class="footer-social">
-                <span class="text-info">Share :</span> &nbsp;
-                <a class="btn-facebook" href="#"><i class="mdi mdi-facebook"></i></a>
-                <a class="btn-twitter" href="#"><i class="mdi mdi-twitter"></i></a>
-                <a class="btn-instagram" href="#"><i class="mdi mdi-instagram"></i></a>
-                <a class="btn-whatsapp" href="#"><i class="mdi mdi-whatsapp"></i></a>
-                <a class="btn-messenger" href="#"><i class="mdi mdi-facebook-messenger"></i></a>
-                <a class="btn-google" href="#"><i class="mdi mdi-google"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>-->
-    </section>
-    <!-- End Property Single Slider header -->
-
-    <div class="property-single-title property-single-title-gallery">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 col-md-8">
-            <h1>{{ venue.id }}-{{ venue.title }}</h1>
-            <h6>
-              <i class="mdi mdi-home-map-marker"></i>{{ venue.address }},
-              <span *ngFor='let sloption of selectedsublocation'>{{ sloption.locname }}</span>,
-              <span *ngFor='let cityoption of selectedcity'>{{ cityoption.cityname }} - </span>,
-              <span *ngFor='let option of selectedstate'>{{ option.statename }}</span>,
-              {{ venue.zipcode }}
-            </h6>
-          </div>
-          <div class="col-lg-4 col-md-4 text-right">
-            <h6 class="mt-2">For Rent</h6>
-            <h2 class="text-primary"><span class="mdi mdi-currency-inr"></span>{{venue.hourprice}}<small>/Hour</small></h2>
-            <h2 class="text-primary"><span class="mdi mdi-currency-inr"></span>{{venue.dayprice}}<small>/Day</small></h2>
-          </div>
-        </div>
-        <hr>
-        <div class="row">
-          <div class="col-lg-8 col-md-8">
-            <p class="mt-1 mb-0"><strong>Username</strong> :{{ venue.username }} &nbsp;&nbsp; <strong>Add to favorites</strong> <i class="mdi mdi-heart text-danger"></i></p>
-          </div>
-          <div class="col-lg-4 col-md-4 text-right">
-            <div class="footer-social">
-              <span>Share :</span> &nbsp;
-              <a class="btn-facebook" href="#"><i class="mdi mdi-facebook"></i></a>
-              <a class="btn-twitter" href="#"><i class="mdi mdi-twitter"></i></a>
-              <a class="btn-instagram" href="#"><i class="mdi mdi-instagram"></i></a>
-              <a class="btn-whatsapp" href="#"><i class="mdi mdi-whatsapp"></i></a>
-              <a class="btn-messenger" href="#"><i class="mdi mdi-facebook-messenger"></i></a>
-              <a class="btn-google" href="#"><i class="mdi mdi-google"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-         
-    <!-- Property Single Slider -->
-    <section class="section-padding">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 col-md-8">
-
-            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-              <li class="nav-item">
-                <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-about" role="tab" aria-controls="pills-about" aria-selected="true">About Venue</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" id="pills-facilities-tab" data-toggle="pill" href="#pills-facilities" role="tab" aria-controls="pills-profile" aria-selected="false">Facilities</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" id="pills-hours-tab" data-toggle="pill" href="#pills-hours" role="tab" aria-controls="pills-contact" aria-selected="false">Business Hours</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" id="pills-location-tab" data-toggle="pill" href="#pills-location" role="tab" aria-controls="pills-home" aria-selected="false">Location</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" id="pills-video-tab" data-toggle="pill" href="#pills-video" role="tab" aria-controls="pills-profile" aria-selected="false">Video/Virtual Tour</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" id="pills-availability-tab" data-toggle="pill" href="#pills-availability" role="tab" aria-controls="pills-contact" aria-selected="false">Availability</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" id="pills-extras-tab" data-toggle="pill" href="#pills-extras" role="tab" aria-controls="pills-extras" aria-selected="false">Extras</a>
-              </li>
-            </ul>
-            <div class="tab-content" id="pills-tabContent">
-              <div class="tab-pane fade show active" id="pills-about" role="tabpanel" aria-labelledby="pills-home-tab">About</div>
-              <div class="tab-pane fade" id="pills-facilities" role="tabpanel" aria-labelledby="pills-profile-tab">Facilities</div>
-              <div class="tab-pane fade" id="pills-hours" role="tabpanel" aria-labelledby="pills-contact-tab">Business hours</div>
-              <div class="tab-pane fade" id="pills-location" role="tabpanel" aria-labelledby="pills-home-tab">Location</div>
-              <div class="tab-pane fade" id="pills-video" role="tabpanel" aria-labelledby="pills-profile-tab">Video</div>
-              <div class="tab-pane fade" id="pills-availability" role="tabpanel" aria-labelledby="pills-contact-tab">Availability</div>
-              <div class="tab-pane fade" id="pills-extras" role="tabpanel" aria-labelledby="pills-extras-tab">Extras</div>
-            </div>
-
-            <div class="card padding-card">
-              <div class="card-body">
-                <h5 class="card-title mb-3">Description</h5>
-                <!--<div class="row">
-        <div class="col-lg-4 col-md-4">
-          <div class="list-icon">
-            <i class="mdi mdi-move-resize-variant"></i>
-            <strong>Area:</strong>
-            <p class="mb-0">1270 aq ft</p>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-4">
-          <div class="list-icon">
-            <i class="mdi mdi-sofa"></i>
-            <strong>Beds:</strong>
-            <p class="mb-0">4 Bedrooms</p>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-4">
-          <div class="list-icon">
-            <i class="mdi mdi-hot-tub"></i>
-            <strong>Baths:</strong>
-            <p class="mb-0">2 Bathrooms</p>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-4 col-md-4">
-          <div class="list-icon">
-            <i class="mdi mdi-garage"></i>
-            <strong>Rooms:</strong>
-            <p class="mb-0">6 Rooms</p>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-4">
-          <div class="list-icon">
-            <i class="mdi mdi-floor-plan"></i>
-            <strong>Floors:</strong>
-            <p class="mb-0">4 Floors</p>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-4">
-          <div class="list-icon">
-            <i class="mdi mdi-car-convertible"></i>
-            <strong>Garage:</strong>
-            <p class="mb-0">2 Garages</p>
-          </div>
-        </div>
-      </div>-->
-                <p class="mb-0">{{venue.description}}</p>
-              </div>
-            </div>
-            <div class="card padding-card">
-              <div class="card-body">
-                <h5 class="card-title mb-3">Facilities</h5>
-                <div class="row">
-                  <div class="col-lg-4 col-md-4">
-                    <ul class="sidebar-card-list">
-                      <li *ngFor="let fclist of selectedclientfacilities">
-                        <i class="mdi mdi-wifi"></i>
-                        {{ fclist.facilityname }}
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="card padding-card">
-              <div class="card-body">
-                <h5 class="card-title mb-4">Business Hours</h5>
-                <div class="row mb-3">
-                  <div class="col-md-12">
-
-                    <table class="table">
-                      <thead>
-                        <tr>
-                          <th scope="col">Weekday</th>
-                          <th scope="col">From</th>
-                          <th scope="col">To</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr *ngFor="let cbhours of clientbusinesshours">
-                          <td scope="row">{{cbhours.weekday}}</td>
-                          <td>{{cbhours.opentime}}</td>
-                          <td>{{cbhours.closetime}}</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="card padding-card">
-              <div class="card-body">
-                <h5 class="card-title mb-3">Location</h5>
-                <div class="row mb-3">
-                  <div class="col-lg-6 col-md-6">
-                    <p><strong class="text-dark">Address :</strong>{{ venue.address }},  <span *ngFor='let sloption of selectedsublocation'>{{ sloption.locname }}</span></p>
-                    <p><strong class="text-dark">State :</strong> <span *ngFor='let option of selectedstate'>{{ option.statename }}</span></p>
-                  </div>
-                  <div class="col-lg-6 col-md-6">
-                    <p><strong class="text-dark">City :</strong> <span *ngFor='let cityoption of selectedcity'>{{ cityoption.cityname }}</span></p>
-                    <p><strong class="text-dark">Zip/Postal Code  :</strong> {{ venue.zipcode }}</p>
-                  </div>
-                </div>
-                <div id="map"></div>
-              </div>
-            </div>
-
-            <div class="card padding-card">
-              <div class="card-body">
-                <h5 class="card-title mb-4">Video</h5>
-                <a href="#"><img class="rounded img-fluid" src="../../assets/img/video.jpg" alt="Card image cap"></a>
-              </div>
-            </div>
-
-            <div class="card padding-card">
-              <div class="card-body">
-                <h5 class="card-title mb-4">Avability</h5>
-
-
-
-              </div>
-            </div>
-
-            <div class="card padding-card">
-              <div class="card-body">
-                <h5 class="card-title mb-4">Extras</h5>
-                <div class="row mb-3">
-                  <div class="col-md-12">
-
-                    <!--<table class="table">
-                     <tbody>
-                        <tr *ngFor="let cbhours of clientbusinesshours">
-                          <td scope="row">{{cbhours.weekday}}</td>
-                          <td>{{cbhours.opentime}}</td>
-                          <td>{{cbhours.closetime}}</td>
-                        </tr>
-                      </tbody>
-                    </table>-->
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="card padding-card reviews-card">
-              <div class="card-body">
-                <h5 class="card-title mb-4">3 Reviews</h5>
-                <div class="media mb-4">
-                  <img class="d-flex mr-3 rounded-circle" src="assets/img/user/1.jpg" alt="">
-                  <div class="media-body">
-                    <h5 class="mt-0">
-                      Stave Martin <small>Feb 12, 2018</small>
-                      <span class="star-rating float-right">
-                        <i class="mdi mdi-star text-warning"></i>
-                        <i class="mdi mdi-star text-warning"></i>
-                        <i class="mdi mdi-star text-warning"></i>
-                        <i class="mdi mdi-star-half text-warning"></i>
-                        <i class="mdi mdi-star-half text-warning"></i><small class="text-success">5/2</small>
-                      </span>
-                    </h5>
-                    <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
-                  </div>
-                </div>
-                <div class="media">
-                  <img class="d-flex mr-3 rounded-circle" src="assets/img/user/2.jpg" alt="">
-                  <div class="media-body">
-                    <h5 class="mt-0">
-                      Mark Smith <small>Feb 09, 2018</small> <span class="star-rating float-right">
-                        <i class="mdi mdi-star text-warning"></i>
-                        <i class="mdi mdi-star-half text-warning"></i>
-                        <i class="mdi mdi-star-half text-warning"></i>
-                        <i class="mdi mdi-star-half text-warning"></i>
-                        <i class="mdi mdi-star-half text-warning"></i><small class="text-success">5/1</small>
-                      </span>
-                    </h5>
-                    <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
-                    <div class="media mt-4">
-                      <img class="d-flex mr-3 rounded-circle" src="assets/img/user/3.jpg" alt="">
-                      <div class="media-body">
-                        <h5 class="mt-0">
-                          Ryan Printz <small>Nov 13, 2018</small> <span class="star-rating float-right">
-                            <i class="mdi mdi-star text-warning"></i>
-                            <i class="mdi mdi-star text-warning"></i>
-                            <i class="mdi mdi-star-half text-warning"></i>
-                            <i class="mdi mdi-star-half text-warning"></i>
-                            <i class="mdi mdi-star-half text-warning"></i><small class="text-success">5/5</small>
-                          </span>
-                        </h5>
-                        <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+        <div *ngFor="let venue of selectedfdata">
+                <section class="osahan-slider">
+                  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                      <div class="carousel-item" *ngFor="let image of clientimagegallery let i = index" [ngClass]="{'active' : i == 0}">
+                        <img src="../../assets/img/{{image.imageurl}}" class="d-block w-100" alt="...">
                       </div>
                     </div>
+                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="sr-only">Next</span>
+                    </a>
                   </div>
-                </div>
-                <div class="media mt-4">
-                  <img class="d-flex mr-3 rounded-circle" src="assets/img/user/4.jpg" alt="">
-                  <div class="media-body">
-                    <h5 class="mt-0">
-                      Stave Mark <small>Feb 12, 2018</small>
-                      <span class="star-rating float-right">
-                        <i class="mdi mdi-star text-warning"></i>
-                        <i class="mdi mdi-star text-warning"></i>
-                        <i class="mdi mdi-star text-warning"></i>
-                        <i class="mdi mdi-star-half text-warning"></i>
-                        <i class="mdi mdi-star-half text-warning"></i><small class="text-success">5/2</small>
-                      </span>
-                    </h5>
-                    <p class="mb-0">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="card padding-card">
-              <div class="card-body">
-                <h5 class="card-title mb-4">Leave a Review</h5>
-                <form name="sentMessage">
-                  <div class="row">
-                    <div class="control-group form-group col-lg-4 col-md-4">
-                      <div class="controls">
-                        <label>Your Name <span class="text-danger">*</span></label>
-                        <input type="text" class="form-control" required>
-                      </div>
-                    </div>
-                    <div class="control-group form-group col-lg-4 col-md-4">
-                      <div class="controls">
-                        <label>Your Email <span class="text-danger">*</span></label>
-                        <input type="email" class="form-control" required>
-                      </div>
-                    </div>
-                    <div class="control-group form-group col-lg-4 col-md-4">
-                      <div class="controls">
-                        <label>Rating <span class="text-danger">*</span></label>
-                        <select class="form-control custom-select">
-                          <option>1 Star</option>
-                          <option>2 Star</option>
-                          <option>3 Star</option>
-                          <option>4 Star</option>
-                          <option>5 Star</option>
-                        </select>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="control-group form-group">
-                    <div class="controls">
-                      <label>Review <span class="text-danger">*</span></label>
-                      <textarea rows="10" cols="100" class="form-control"></textarea>
-                    </div>
-                  </div>
-                  <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
-                </form>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-4">
-            <div class="card sidebar-card">
-              <div class="card-body">
-                <h5 class="card-title mb-4">About Agent</h5>
-                <div class="about-agent">
-                  <div class="carousel-inner">
-                    <div class="carousel-item active">
-                      <div class="card card-list">
-                        <a href="#">
-                          <img class="card-img-top" src="../../assets/img/avatar.jpg" alt="">
-                          <div class="card-body pb-0">
-                            <h5 class="card-title mb-4">Gurdeep Osahan</h5>
-                            <h6 class="card-subtitle mb-3 text-muted"><i class="mdi mdi-phone"></i> (950) 491-570-180</h6>
-                            <h6 class="card-subtitle mb-3 text-muted"><i class="mdi mdi-email"></i> support@example.com</h6>
-                            <h6 class="card-subtitle text-muted"><i class="mdi mdi-link"></i> www.askbootstrap.com</h6>
+                </section>  
+                
+                <div class="property-single-title property-single-title-gallery">
+                        <div class="container">
+                          <div class="row">
+                            <div class="col-lg-8 col-md-8">
+                              <h1>{{ venue.title }}</h1>
+                              <h6>
+                                <i class="mdi mdi-home-map-marker"></i>{{ venue.address }},
+                                <span *ngFor='let sloption of selectedsublocation'>{{ sloption.locname }}</span>,
+                                <span *ngFor='let cityoption of selectedcity'>{{ cityoption.cityname }}</span>,
+                                <span *ngFor='let option of selectedstate'>{{ option.statename }}</span>,
+                                {{ venue.zipcode }}
+                              </h6>
+                            </div>
+                            <div class="col-lg-4 col-md-4 text-right">
+                              <!--<h6 class="mt-2">For Rent</h6>-->
+                              <h5 class="text-primary">
+                                <span class="mdi mdi-currency-inr"></span>{{venue.hourprice | number : '1.2-2'}}<small>/Hour</small><br />
+                                <span class="mdi mdi-currency-inr"></span>{{venue.dayprice | number : '1.2-2'}}<small>/Day</small><br />
+                                <span class="mdi mdi-currency-inr"></span>{{venue.weekprice | number : '1.2-2'}}<small>/Week</small><br />
+                                <span class="mdi mdi-currency-inr"></span>{{venue.monthprice | number : '1.2-2'}}<small>/Month</small>
+                              </h5>
+                            </div>
                           </div>
-                        </a>
+                          <hr>
+                          <div class="row">
+                            <div class="col-lg-8 col-md-8">
+                              <p class="mt-1 mb-0"><strong>Username</strong> :{{ venue.username }} &nbsp;&nbsp; <strong>Add to favorites</strong> <i class="mdi mdi-heart text-danger"></i></p>
+                            </div>
+                            <div class="col-lg-4 col-md-4 text-right">
+                              <div class="footer-social">
+                                <span>Share :</span> &nbsp;
+                                <a class="btn-facebook" href="#"><i class="mdi mdi-facebook"></i></a>
+                                <a class="btn-twitter" href="#"><i class="mdi mdi-twitter"></i></a>
+                                <a class="btn-instagram" href="#"><i class="mdi mdi-instagram"></i></a>
+                                <a class="btn-whatsapp" href="#"><i class="mdi mdi-whatsapp"></i></a>
+                                <a class="btn-messenger" href="#"><i class="mdi mdi-facebook-messenger"></i></a>
+                                <a class="btn-google" href="#"><i class="mdi mdi-google"></i></a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="card sidebar-card">
-              <div class="card-body">
-                <h5 class="card-title mb-4">Request a Showing</h5>
-                <form name="sentMessage">
-                  <div class="control-group form-group">
-                    <div class="controls">
-                      <label>Your Name <span class="text-danger">*</span></label>
-                      <input type="text" placeholder="Enter Your Name" class="form-control" required>
-                    </div>
-                  </div>
-                  <div class="control-group form-group">
-                    <div class="controls">
-                      <label>Your Email <span class="text-danger">*</span></label>
-                      <input type="text" placeholder="Enter Your Email" class="form-control" required>
-                    </div>
-                  </div>
-                  <div class="control-group form-group">
-                    <div class="controls">
-                      <label>Phone <span class="text-danger">*</span></label>
-                      <input type="text" placeholder="Enter Phone Number" class="form-control" required>
-                    </div>
-                  </div>
-                  <div class="control-group form-group">
-                    <div class="controls">
-                      <label>Message <span class="text-danger">*</span></label>
-                      <textarea rows="5" cols="50" class="form-control"></textarea>
-                    </div>
-                  </div>
-                  <button type="submit" class="btn btn-secondary btn-lg btn-block">SEND REQUEST</button>
-                </form>
-              </div>
-            </div>
 
-          </div>
+
+                      <section class="section-padding">
+                          <div class="container">
+                              <div class="row">
+                                  <div class="col-lg-8 col-md-8">
+                                      <div id="parentHorizontalTab">
+                                          <ul class="resp-tabs-list hor_1">
+                                          <li>About</li>
+                                          <li>Facilities</li>
+                                          <li>Business Hours</li>
+                                          <li>Video/Virtual Tours</li>
+                                          <li>Availability</li>
+                                          <li>Extras</li>
+                                          </ul>
+                                          <div class="resp-tabs-container hor_1">
+
+                                            <!--about-->
+                                          <div>                                         
+                                              <div class="row">
+                                                  <div class="col-md-12">
+                                                    <p class="mb-0">{{venue.description}}</p>
+                                                  </div>
+                                                  <!-- <div class="col-lg-4 col-md-4">
+                                                    <div class="list-icon">
+                                                      <i class="mdi mdi-move-resize-variant"></i>
+                                                      <strong>Area:</strong>
+                                                      <p class="mb-0">1270 aq ft</p>
+                                                    </div>
+                                                  </div>
+                                                  <div class="col-lg-4 col-md-4">
+                                                    <div class="list-icon">
+                                                      <i class="mdi mdi-sofa"></i>
+                                                      <strong>Beds:</strong>
+                                                      <p class="mb-0">4 Bedrooms</p>
+                                                    </div>
+                                                  </div>
+                                                  <div class="col-lg-4 col-md-4">
+                                                    <div class="list-icon">
+                                                      <i class="mdi mdi-hot-tub"></i>
+                                                      <strong>Baths:</strong>
+                                                      <p class="mb-0">2 Bathrooms</p>
+                                                    </div>
+                                                  </div> -->
+                                                </div>
+                                          </div>
+                                          <!--about-->
+
+                                          <!--facilities-->
+                                          <div>
+                                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nibh urna,
+                                          euismod ut ornare non, volutpat vel tortor. Integer laoreet placerat suscipit.
+                                          Sed sodales scelerisque commodo. Nam porta cursus lectus. Proin nunc erat,
+                                          gravida a facilisis quis, ornare id lectus. Proin consectetur nibh quis urna gravida mollis.
+                                          <br>
+                                          <br>
+                                          <p>Tab 2 Container</p>
+                                          </div>
+<!--facilities-->
+
+<!--business hours-->
+                                          <div>
+                                          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                          Vestibulum nibh urna, euismod ut ornare non, volutpat vel tortor.
+                                          Integer laoreet placerat suscipit. Sed sodales scelerisque commodo.
+                                          Nam porta cursus lectus. Proin nunc erat, gravida a facilisis quis, ornare id lectus.
+                                          Proin consectetur nibh quis urna gravida mollis.
+                                          <br>
+                                          <br>
+                                          <p>Tab 3 Container</p>
+                                          </div>
+<!--business hours-->
+
+<!--virtual tour-->
+                                          <div>
+                                              <div class="row">
+                                                  <div class="col-lg-12 col-md-12">
+                                                    <agm-map 
+                                                    [latitude]="lat"
+                                                    [longitude]="lng"
+                                                    [zoom]="zoom"
+                                                    [disableDefaultUI]="false"
+                                                    [zoomControl]="false"
+                                                    (mapClick)="mapClicked($event)">
+                                                  
+                                                    <agm-marker 
+                                                        *ngFor="let m of markers; let i = index"
+                                                        (markerClick)="clickedMarker(m.label, i)"
+                                                        [latitude]="m.lat"
+                                                        [longitude]="m.lng"
+                                                        [label]="m.label"
+                                                        [markerDraggable]="m.draggable"
+                                                        (dragEnd)="markerDragEnd(m, $event)">
+                                                        
+                                                      <agm-info-window>
+                                                        <strong>InfoWindow content</strong>
+                                                      </agm-info-window>                                                      
+                                                    </agm-marker>
+                                                    
+                                                    <agm-circle [latitude]="lat + 0.3" [longitude]="lng" 
+                                                        [radius]="5000"
+                                                        [fillColor]="'red'"
+                                                        [circleDraggable]="true"
+                                                        [editable]="true">
+                                                    </agm-circle>
+                                                  
+                                                  </agm-map>
+                                                  </div>
+                                                </div>
+                                          </div>
+<!--virtual tour-->
+
+<!--availability-->
+                                          <div>
+          
+                                              <div class="row">
+                                                  <div class="col-md-12">
+                                                    <p-carousel [value]="selectedvenuespacelist" numVisible="2">
+                                                      <ng-template let-item pTemplate="item">                                             
+                              
+                                                        <div class="ui-grid ui-grid-responsive">
+                                                          <div class="col">
+                                                            <div class="card" style="width: 20rem;">
+                                                              <img src="../../assets/img/{{item.image}}" class="card-img-top" alt="...">
+                                                              <div class="card-body">
+                                                                <h5 class="card-title">{{item.name}}</h5>
+                                                                <p class="card-text block-with-text mb-10">{{item.description}}</p>
+                              
+                                                                <div class="row">
+                                                                  <div class="col-lg-12 col-md-4">
+                                                                    <div class="list-icon">
+                                                                      <i class="mdi mdi-move-resize-variant"></i>
+                                                                      Floor Area<p class="mb-0"><strong>{{item.area}}</strong></p>
+                                                                    </div>
+                                                                  </div>
+                              
+                                                                  <div class="col-lg-12 col-md-4">
+                                                                    <div class="list-icon">
+                                                                      <i class="mdi mdi-move-resize-variant"></i>
+                                                                      Recommended Guests<p class="mb-0"><strong>{{item.guests}}</strong></p>
+                                                                    </div>
+                                                                  </div>
+                                                                </div>
+                              
+                                                                <div class="row">
+                                                                  <div class="col-lg-12">
+                                                                    <button (click)="toggle(item.id,item.name)" id="btToggle" class="btn btn-primary btn-lg btn-block">Select</button>
+                                                                    </div>
+                                                                </div>
+                              
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                              
+                                                      </ng-template>
+                                                    </p-carousel>
+                                                  </div>
+                                                </div>
+          
+                                              
+          
+                                                <div *ngIf="show_dialog">
+    <!-- calendar -->   
+    <div class="row">
+        <div class="col-md-12">                                                                                              
+          <p-fullCalendar [events]="events" [options]="options" 
+          (eventClick)="eventClick($event.detail)">
+        </p-fullCalendar>                                                  
         </div>
       </div>
-    </section>
-    <!-- End Property Single Slider -->
+    <!-- calendar -->
+
+
+                                                    <div class="row">
+                                                      <div class="col-md-12"><b>Select Seating Type</b></div>
+                                                      <div class="col-md-12">
+                                                        <div class="btn-group btn-group-toggle m-b-10">
+                                                          <label class="btn btn-outline-info customlabel" *ngFor="let item of selectedseattype; let i=index">
+                                                            <div style="width:100%; float:left; text-align:center;">
+                                                              <img src="../../assets/img/{{ item.image }}" alt="{{item.halltypename}}" />
+                                                              
+                                                            </div>
+                                                            <div style="width:100%; float:left; text-align:center;">
+                                                              <input type="radio" autocomplete="off" [(ngModel)]="radioSelected"
+                                                                     name="{{item.halltypename}}" value="{{item.id}}" (click)="onItemChange(item)" />
+                                                              {{item.halltypename}}
+                                                            </div>
+                                                          </label>
+                                                        </div>
+                                
+                                                      </div>
+                                                    </div>
+                                
+                                                    <div class="row">
+                                                      <div class="col-md-12">
+                                                        <div class="form-group">
+                                                          <label class="col-md-12 p-l-0">Select Duration</label>
+                                                          <p-selectButton [options]="Durationdata" [(ngModel)]="selected"></p-selectButton>
+                                                        </div>
+                                                      </div>
+                                
+                                                    </div>
+                                
+                                                    <div [ngSwitch]="selected">
+                                                      <div *ngSwitchCase="'Hourly'">
+                                                        <div class="row">
+                                                          <div class="control-group form-group col-lg-5 col-md-5">
+                                                            <div class="controls">
+                                                              <label class="col-12 p-0">Select Date/Time</label>
+                                                              <!-- <p-calendar [inputStyle]="{'width': '100%', 'min-width': '100%'}" [(ngModel)]="hourdate" dateFormat="dd-mm-yy" [showTime]="true" [readonlyInput]="true" [showIcon]="true"></p-calendar> -->
+                                                              <p-calendar [(ngModel)]="hourdate" dateFormat="dd-mm-yy" [showTime]="true" [readonlyInput]="true" [showIcon]="true"></p-calendar>
+                                                            </div>
+                                                          </div>
+                                
+                                                          <!-- <div class="control-group form-group col-lg-3 col-md-3">
+                                                            <div class="controls">
+                                                              <label>Select Time</label>
+                                                              <p-calendar [inputStyle]="{'width': '100%', 'min-width': '100%'}" [(ngModel)]="hourtime" [timeOnly]="true" showTime="true" hourFormat="24"></p-calendar>
+                                                            </div>
+                                                          </div> -->
+                                
+                                                          <div class="control-group form-group col-lg-2 col-md-2">
+                                                            <div class="controls">
+                                                              <label>No.Hours</label>
+                                                              <p-spinner [inputStyle]="{'width': '100%', 'min-width': '100%'}" [(ngModel)]="hournohrs" [min]="1" [max]="100"></p-spinner>
+                                                            </div>
+                                                          </div>
+                                
+                                                          <div class="control-group form-group col-lg-2 col-md-2">
+                                                            <div class="controls">
+                                                              <label>No.Persons</label>
+                                                              <p-spinner [inputStyle]="{'width': '100%', 'min-width': '100%'}" [(ngModel)]="nopersons" [min]="1" [max]="100"></p-spinner>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                
+                                                        <div class="row">
+                                                          <div class="col-md-12 text-right">
+                                                            <!-- <p-button label="Check Availibility" (click)="handleTime($event)"></p-button> -->
+                                                            <p-button label="Check Availibility" (click)="handleHourly($event)"></p-button>
+                                                          </div>
+                                                        </div>
+
+<div *ngIf="show_availability">
+    <div class="card bg-light text-center" *ngIf="availabilitycheck && availabilitycheck.length > 0">
+        <div class="card-body">
+          <h5 class="card-title">Sorry</h5>
+          <p class="card-text">current Slot is not available.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+
+<div class="card bg-light text-center" *ngIf="availabilitycheck == undefined || availabilitycheck.length == 0">
+  <div class="row">
+    <div class="card-body">
+        <h5 class="card-title">Available</h5>
+        <p class="card-text">current Slot is available.</p>
+        <button class="btn btn-primary" (click)=BookHourly(venue.cid,venue.hourprice)>BOOK NOW</button>
+       <br/>
+      Selected Room ID: {{selectedroom}}<br />
+      Checked In Date: {{selectedhDate}}<br />
+      Checked Out Date: {{checkoutdate}}<br/>
+      selected Hours: {{selectednofhrs}}<br />
+      selected Persons: {{selectednofpersons}}<br />                      
+      selected Seating Type: {{radioSelected}}
+    </div>  
   </div>
+</div>
+</div>
+                                                    </div>
+                                
+                                                      <div *ngSwitchCase="'Weekly'">
+                                                        <div class="row">
+                                                          <div class="control-group form-group col-lg-5 col-md-5">
+                                                            <div class="controls">
+                                                              <label class="col-12">Select Date</label>
+                                                              <!-- <p-calendar [inputStyle]="{'width': '133%', 'min-width': '133%'}" [(ngModel)]="hourdate" dateFormat="dd/mm/yy" [readonlyInput]="true"></p-calendar> -->
+                                                              <p-calendar [(ngModel)]="hourdate" dateFormat="dd-mm-yy" [showTime]="true" [readonlyInput]="true" [showIcon]="true"></p-calendar>
+                                                            </div>
+                                                          </div>
+                                
+                                                          <!-- <div class="control-group form-group col-lg-3 col-md-3">
+                                                            <div class="controls">
+                                                              <label>Select Time</label>
+                                                              <p-calendar [inputStyle]="{'width': '100%', 'min-width': '100%'}" [(ngModel)]="hourtime" [timeOnly]="true" showTime="true" hourFormat="24"></p-calendar>
+                                                            </div>
+                                                          </div> -->
+                                
+                                                          <div class="control-group form-group col-lg-2 col-md-2">
+                                                            <div class="controls">
+                                                              <label>No.of Weeks</label>
+                                                              <p-spinner [inputStyle]="{'width': '100%', 'min-width': '100%'}" [(ngModel)]="noweeks" [min]="1" [max]="100"></p-spinner>
+                                                            </div>
+                                                          </div>
+                                
+                                                          <div class="control-group form-group col-lg-2 col-md-2">
+                                                            <div class="controls">
+                                                              <label>Persons</label>
+                                                              <p-spinner [inputStyle]="{'width': '100%', 'min-width': '100%'}" [(ngModel)]="nopersons" [min]="1" [max]="100"></p-spinner>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                
+                                                        <div class="row">
+                                                          <div class="col-md-12 text-right">
+                                                            <!-- <p-button label="Check Availibility" (click)="handleTime($event)"></p-button> -->
+                                                            <p-button label="Check Availibility" (click)="handleWeekly($event)"></p-button>
+                                                          </div>
+                                                        </div>
+
+                                                        <div *ngIf="show_availability">
+                                                            <div class="card bg-light text-center" *ngIf="availabilitycheck && availabilitycheck.length > 0">
+                                                                <div class="card-body">
+                                                                  <h5 class="card-title">Sorry</h5>
+                                                                  <p class="card-text">current Slot is not available.</p>
+                                                                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                                                                </div>
+                                                              </div>
+                                                        
+                                                        <div class="card bg-light text-center" *ngIf="availabilitycheck == undefined || availabilitycheck.length == 0">
+                                                          <div class="row">
+                                                            <div class="card-body">
+                                                                <h5 class="card-title">Available</h5>
+                                                                <p class="card-text">current Slot is available.</p>
+                                                                <button class="btn btn-primary" (click)=BookWeekly(venue.cid,venue.weekprice)>BOOK NOW</button>
+                                                                <br/>
+                                                                Selected Room ID: {{selectedroom}}<br />
+                                                                Checked In Date: {{selectedhDate}}<br />
+                                                                Checked Out Date: {{weekdate}}<br/>
+                                                                selected Time: {{selectedhTime}}<br />
+                                                                selected Weeks: {{selectednoofweeks}}<br />
+                                                                selected Persons: {{selectednofpersons}}<br />                      
+                                                                selected Seating Type: {{radioSelected}}
+                                                            </div>  
+                                                          </div>
+                                                        </div>
+                                                        </div>                                
+                                                      </div>
+                                
+                                                      <div *ngSwitchCase="'Monthly'">
+                                                        <div class="row">
+                                                          <div class="control-group form-group col-lg-5 col-md-5">
+                                                            <div class="controls">
+                                                              <label class="col-12">Select Date</label>
+                                                              <!-- <p-calendar [inputStyle]="{'width': '133%', 'min-width': '133%'}" [(ngModel)]="hourdate" dateFormat="dd/mm/yy" [readonlyInput]="true"></p-calendar> -->
+                                                              <p-calendar [(ngModel)]="hourdate" dateFormat="dd-mm-yy" [showTime]="true" [readonlyInput]="true" [showIcon]="true"></p-calendar>
+                                                            </div>
+                                                          </div>
+                                
+                                                          <!-- <div class="control-group form-group col-lg-3 col-md-3">
+                                                            <div class="controls">
+                                                              <label>Select Time</label>
+                                                              <p-calendar [inputStyle]="{'width': '100%', 'min-width': '100%'}" [(ngModel)]="hourtime" [timeOnly]="true" showTime="true" hourFormat="24"></p-calendar>
+                                                            </div>
+                                                          </div> -->
+                                
+                                                          <div class="control-group form-group col-lg-2 col-md-2">
+                                                            <div class="controls">
+                                                              <label>No.of Months</label>
+                                                              <p-spinner [inputStyle]="{'width': '100%', 'min-width': '100%'}" [(ngModel)]="nomonths" [min]="1" [max]="100"></p-spinner>
+                                                            </div>
+                                                          </div>
+                                
+                                                          <div class="control-group form-group col-lg-2 col-md-2">
+                                                            <div class="controls">
+                                                              <label>Persons</label>
+                                                              <p-spinner [inputStyle]="{'width': '100%', 'min-width': '100%'}" [(ngModel)]="nopersons" [min]="1" [max]="100"></p-spinner>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                
+                                                        <div class="row">
+                                                          <div class="col-md-12 text-right">                                                           
+                                                            <p-button label="Check Availibility" (click)="handleMonthly($event)"></p-button>
+                                                          </div>
+                                                        </div>
+
+                                                        <div *ngIf="show_availability">
+                                                            <div class="card bg-light text-center" *ngIf="availabilitycheck && availabilitycheck.length > 0">
+                                                                <div class="card-body">
+                                                                  <h5 class="card-title">Sorry</h5>
+                                                                  <p class="card-text">current Slot is not available.</p>
+                                                                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                                                                </div>
+                                                              </div>
+                                                        
+                                                        <div class="card bg-light text-center" *ngIf="availabilitycheck == undefined || availabilitycheck.length == 0">
+                                                          <div class="row">
+                                                            <div class="card-body">
+                                                                <h5 class="card-title">Available</h5>
+                                                                <p class="card-text">current Slot is available.</p>
+                                                                <button class="btn btn-primary" (click)=BookMonthly(venue.cid,venue.monthprice)>BOOK NOW</button>
+                                                                <br/>
+                                                                Selected Room ID: {{selectedroom}}<br />
+                                                                Checked In Date: {{selectedhDate}}<br />
+                                                                Checked Out Date: {{checkoutdate}}<br/>
+                                                                selected Months: {{selectednoofmonths}}<br />
+                                                                selected Persons: {{selectednofpersons}}<br />                     
+                                                                selected Seating Type: {{radioSelected}}
+                                                            </div>  
+                                                          </div>
+                                                        </div>
+                                                        </div>       
+
+                                                      </div>
+                                
+                                                      <div *ngSwitchCase="'AllDay'">
+                                                        <div class="row">
+                                                          <div class="control-group form-group col-lg-5 col-md-5">
+                                                            <div class="controls">
+                                                              <label class="col-12">Select Date</label>
+                                                              <p-calendar [(ngModel)]="hourdate" dateFormat="dd-mm-yy" [showTime]="true" [readonlyInput]="true" [showIcon]="true"></p-calendar>
+                                                          
+                                                            </div>
+                                                          </div>
+                                
+                                                          <!-- <div class="control-group form-group col-lg-3 col-md-3">
+                                                            <div class="controls">
+                                                              <label>Select Time</label>
+                                                              <p-calendar [inputStyle]="{'width': '100%', 'min-width': '100%'}" [(ngModel)]="hourtime" [timeOnly]="true" showTime="true" hourFormat="24"></p-calendar>
+                                                            </div>
+                                                          </div> -->
+                                
+                                                          <div class="control-group form-group col-lg-2 col-md-2">
+                                                            <div class="controls">
+                                                              <label>No.of Days</label>
+                                                              <p-spinner [inputStyle]="{'width': '100%', 'min-width': '100%'}" [(ngModel)]="nodays" [min]="1" [max]="100"></p-spinner>
+                                                            </div>
+                                                          </div>
+                                
+                                                          <div class="control-group form-group col-lg-2 col-md-2">
+                                                            <div class="controls">
+                                                              <label>Persons</label>
+                                                              <p-spinner [inputStyle]="{'width': '100%', 'min-width': '100%'}" [(ngModel)]="nopersons" [min]="1" [max]="100"></p-spinner>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                
+                                                        <div class="row">
+                                                          <div class="col-md-12 text-right">
+                                                            <p-button label="Check Availibility" (click)="handleAllDay($event)"></p-button>
+                                                          </div>
+                                                        </div>
+
+                                                        <div *ngIf="show_availability">
+                                                            <div class="card bg-light text-center" *ngIf="availabilitycheck && availabilitycheck.length > 0">
+                                                                <div class="card-body">
+                                                                  <h5 class="card-title">Sorry</h5>
+                                                                  <p class="card-text">current Slot is not available.</p>
+                                                                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                                                                </div>
+                                                              </div>
+                                                        
+                                                        <div class="card bg-light text-center" *ngIf="availabilitycheck == undefined || availabilitycheck.length == 0">
+                                                          <div class="row">
+                                                            <div class="card-body">
+                                                                <h5 class="card-title">Available</h5>
+                                                                <p class="card-text">current Slot is available.</p>
+                                                                <button class="btn btn-primary" (click)=BookaDay(venue.cid,venue.dayprice)>BOOK NOW</button>
+                                                                <br/>
+                                                                Selected Room ID: {{selectedroom}}<br />
+                                                                Checked In Date: {{selectedhDate}}<br />
+                                                                Checked Out Date: {{checkoutdate}}<br/>
+                                                                selected No.Days: {{selectednoofdays}}<br />
+                                                                selected Persons: {{selectednofpersons}}<br />                     
+                                                                selected Seating Type: {{radioSelected}}
+                                                            </div>  
+                                                          </div>
+                                                        </div>
+                                                        </div>   
+                                
+                                                      </div>
+                                                    </div>
+                                
+                                                    <!--<button class="btn btn-primary" (click)=showCart(venue.cid,venue.hourprice)>Add to Cart</button>-->
+                                                  </div>
+          
+
+                                          </div>
+                                <!--availability-->
+
+                                <!--extras-->
+                                          <div>
+                                            <div class="row">
+                                              <div class="col-lg-12">
+                                                  tab 6
+                                                  <!-- <div class="col-md-12">
+                                                    <div class="btn-group btn-group-toggle m-b-10">
+                                                      <label class="btn btn-outline-info customlabel" *ngFor="let cextras of clientextraslist; let i = index">
+                                                        <div style="width:100%; float:left; text-align:center;">
+                                                          {{cextras.cfacilityicon}}                                                          
+                                                        </div>
+                                                        <div style="width:100%; float:left; text-align:center;">
+                                                          <input type="radio" autocomplete="off" [(ngModel)]="radioSelected" 
+                                                                 name="{{cextras.cfacilityname}}" value="{{cextras.id}}" (click)=AddItems(cextras.id,cextras.cfacilityname,cextras.price,1) />
+                                                                 {{cextras.cfacilityname}} - {{cextras.price | number : '1.2-2'}}
+                                                        </div>
+                                                      </label>
+                                                    </div>
+                            
+                                                  </div> -->
+                                                  <!-- <ul>
+                                                    <li *ngFor="let cextras of clientextraslist; let i = index">
+                                                        <input type="checkbox" 
+                                                        [(ngModel)]="cextras.isSelected" 
+                                                        name="list_name" value="{{cextras.id}}" 
+                                                        (change)="isAllSelected(cextras.id,cextras.cfacilityname,cextras.price,1)"/>
+                                                        {{cextras.cfacilityicon}} - {{cextras.cfacilityname}} - {{cextras.price | number : '1.2-2'}}
+                                                    </li>                                                   
+                                                </ul> -->
+                                         
+                                             
+                                                  <table class="table">
+                                                      <tbody>
+                                                        <tr *ngFor="let cextras of clientextraslist; let i = index">
+                                                      
+                                                          <td>{{cextras.id}}</td>
+                                                          <td>{{cextras.cfacilityicon}}</td>
+                                                          <td>{{cextras.cfacilityname}}</td>
+                                                          <td class="text-right">{{cextras.price | number : '1.2-2'}}</td>                                                        
+                                                          <td class="text-right">
+                                                            <button type="button" name="submitButton" #submitButton  class="btn btn-sm btn-primary" (click)=AddItems(cextras.id,cextras.cfacilityname,cextras.price,1)>
+                                                              Add To Cart 
+                                                            </button>                 
+                                                          </td>
+                                                        </tr>
+                                                      </tbody>
+                                                    </table>
+                                              </div>
+                                            </div>
+
+                                          </div><!--extras-->
+                                          </div>
+                                          </div>
+                                    </div>
+
+                                    <div class="col-lg-4 col-md-4">
+                                      <div class="card sidebar-card">
+                                        <div class="card-body">
+                                          <h5 class="card-title">My Booking Details</h5>
+                                          <ng-container *ngIf="showinvdiv">
+                                            <div class="row">
+                                              <div class="col">
+                                                  <div class="alert alert-primary text-center" role="alert">
+                                                      You have No Bookings
+                                                    </div>
+                                                </div>
+                                            </div>
+                                          </ng-container>
+                          
+                                          <ng-container *ngIf="showHourInvoice">
+                                            <div class="invoice">
+                                              <div class="row contacts">
+                                                <div class="col invoice-details">
+                                                  <div class="date">Date of Booking: <span>{{todaysdate}}</span></div>
+                                                  <div class="date">CheckIn Date:<span>{{selectedhDate}}</span></div>
+                                                  <div class="date">CheckIn Date:<span>{{checkoutdate}}</span></div>
+                                                  
+                                                  <div class="date">Selected Room ID: <span>{{selectedroom}}</span></div>
+                                                  <div class="date">Selected Room:<span><!--{{selectedroom}}-->{{selectedroomname}}</span></div>
+                                                  <div class="date">Selected Seating Type:<span>{{radioSelected}}</span> </div>
+                                                  <div class="date">Price per Hour (<span class="mdi mdi-currency-inr"></span>) :<span> {{HourPrice | number : '1.2-2'}}</span></div>
+                                                  <div class="date">No.of Hours:<span>{{selectednofhrs}}</span></div>
+                                                  <div class="date">No.Persons: <span>{{selectednofpersons}}</span></div>
+                                                  <div class="date">Total Price (<span class="mdi mdi-currency-inr"></span>) :<span> {{Btotalprice | number : '1.2-2'}}</span></div>
+                                                </div>
+                                              </div>
+                                            </div>                                          
+                                          </ng-container>
+                               
+                                          <ng-container *ngIf="showWeeklyInvoice">
+                                            <div class="invoice">
+                                              <div class="row contacts">
+                                                <div class="col invoice-details">
+                                                  <div class="date">Date of Booking: <span>{{todaysdate}}</span></div>
+                                                  <div class="date">Selected From Date: <span>{{selectedhDate}}</span></div>
+                                                  <div class="date">Selected To Date: <span>{{weekdate}}</span></div>
+                                                  <div class="date">Selected Time: <span>{{selectedhTime}}</span></div>
+                                                  <div class="date">Selected Room: <span>{{selectedroomname}}</span></div>
+                                                  <div class="date">Selected Seating Type: <span>{{radioSelected}}</span> </div>
+                                                  <div class="date">Price per Week: <span>{{WeekPrice | number : '1.2-2'}}</span></div>
+                                                  <div class="date">No.of Weeks: <span>{{selectednoofweeks}}</span></div>
+                                                  <div class="date">No.Persons: <span>{{selectednofpersons}}</span></div>
+                                                  <div class="date">Total Price :<span> {{Btotalprice | number : '1.2-2'}}</span></div>                          
+                                                </div>
+                                              </div>
+                                            </div>                                         
+                                          </ng-container>
+                          
+                                          <ng-container *ngIf="showMonthlyInvoice">
+                                            <div class="invoice">
+                                              <div class="row contacts">
+                                                <div class="col invoice-details">
+                                                  <div class="date">Date of Booking: <span>{{todaysdate}}</span></div>
+                                                  <div class="date">Selected From Date: <span> {{selectedhDate}}</span></div>
+                                                  <div class="date">Selected To Date: <span>{{mtodate}}</span></div>
+                                                  <div class="date">Selected Time: <span>{{selectedhTime}}</span></div>
+                                                  <div class="date">Selected Room: <span>{{selectedroomname}}</span></div>
+                                                  <div class="date">Selected Seating Type: <span>{{radioSelected}}</span></div>
+                                                  <div class="date">Price per Month: <span>{{MonthlyPrice | number : '1.2-2'}}</span></div>
+                                                  <div class="date">No.of Months: <span>{{selectednoofmonths}}</span></div>
+                                                  <div class="date">No.Persons: <span>{{selectednofpersons}}</span></div>
+                                                  <div class="date">Total Price : <span>{{Btotalprice | number : '1.2-2'}}</span></div>
+                                                </div>                          
+                                                </div>
+                                            </div>                                         
+                                          </ng-container>
+                          
+                                          <ng-container *ngIf="showDailyInvoice">
+                                            <div class="invoice">
+                                              <div class="row contacts">
+                                                <div class="col invoice-details">
+                                                  <div class="date">Date of Booking:<span>{{todaysdate}}</span></div>
+                                                  <div class="date">Selected From Date: <span>{{selectedhDate}}</span></div>
+                                                  <div class="date">Selected To Date: <span>{{dtodate}}</span></div>
+                                                  <div class="date">Selected Time: <span>{{selectedhTime}}</span></div>
+                                                  <div class="date">Selected Room: <span>{{selectedroomname}}</span></div>
+                                                  <div class="date">Selected Seating Type:<span>{{radioSelected}}</span></div>
+                                                  <div class="date">Price per Day: <span>{{DayPrice | number : '1.2-2'}}</span></div>
+                                                  <div class="date">No.of Days:<span>{{selectednoofdays}}</span></div>
+                                                  <div class="date">No.Persons: <span>{{selectednofpersons}}</span></div>
+                                                  <div class="date">Total Price : <span>{{Btotalprice | number : '1.2-2'}}</span></div>
+                                                </div>
+                              </div>
+                                            </div>
+                                          
+                                          </ng-container>
+
+                                          <ng-container *ngIf="cartflag">
+                                              <div class="card">
+                                                  <div class="card-header">
+                                                      <b>Your Selected Items</b>
+                                                      <button type="button" class="btn btn-sm btn-warning float-right">
+                                                          Total items <span class="badge badge-light">{{cartDetails.length}}</span>        
+                                                      </button>
+                                                  </div>
+                                                  <div class="card-body">
+<!-- 
+                                                      <table cellspacing="0" cellpadding="0" class="table">
+                                                          <thead>
+                                                            <tr>
+                                                             
+                                                              <th class="text-left">ITEMS</th>
+                                                              <th class="text-right">PRICE</th>
+                                                              <th class="text-right">QUANTITY</th>
+                                                              <th class="text-right">TOTAL</th>
+                                                            </tr>
+                                                          </thead>
+                                                          <tbody>
+                                                            <tr *ngFor="let cext of checkedList">                                                             
+                                                              <td class="text-left">{{cext.cfacilityname}}</td>
+                                                              <td class="unit">{{cext.price | number : '1.2-2'}}</td>
+                                                              <td class="qty">
+                                                                <input class="form-control qtyinput" type="number" [value]="1" min="1" id={{cext.id}}
+                                                                [(ngModel)]="CQty"
+                                                                (change)="onCartItemChanged($event)" />
+                                                              </td>
+                                                              <td class="total text-right">{{ CQty * cext.price | number : '1.2-2'}}</td>                                                             
+                                                            </tr>
+                                                          </tbody>
+                                                          <tfoot>
+                                                            <tr>                                                            
+                                                              <td colspan="3" class="text-right">TAX 25%</td>
+                                                              <td class="text-right"><b>00.00</b></td>
+                                                            </tr>
+                                                            <tr>                                                             
+                                                              <td colspan="3" class="text-right">GRAND TOTAL (<span class="mdi mdi-currency-inr"></span>)</td>
+                                                              <td class="text-right"><b>{{GrandtotalPrice | number : '1.2-2'}}</b></td>
+                                                            </tr>
+                                                          </tfoot>
+                                                        </table>   -->
+                                                      <table border="0" cellspacing="0" cellpadding="0" class="table">
+                                                          <thead>
+                                                            <tr>
+                                                              <th></th>
+                                                              <th class="text-left">ITEMS</th>
+                                                              <th class="text-right">PRICE</th>
+                                                              <th class="text-right">QUANTITY</th>
+                                                              <th class="text-right">TOTAL</th>
+                                                            </tr>
+                                                          </thead>
+                                                          <tbody>
+                                                            <tr *ngFor="let detail of cartDetails; let i = index">
+                                                              <td>
+                                                                <button (click)=removeFromCart(i) style="background-color:transparent; border:0;">
+                                                                  <i class="fa fa-times-circle" aria-hidden="true"></i>
+                                                                </button>
+                                                              </td>
+                                                              <td class="text-left">{{detail.CItem_sname}}</td>
+                                                              <td class="unit">{{detail.CItem_price}}</td>
+                                                              <td class="qty">
+                                                                <input class="form-control qtyinput" type="number" value="{{detail.CQty }}" min=1 id={{detail.id}}
+                                                                       [(ngModel)]="detail.CQty"
+                                                                       (change)="onCartItemChanged($event)" />
+                                                              </td>
+                                                              <td class="total text-right">{{ detail.CQty * detail.CItem_price | number : '1.2-2'}}</td>
+                                                             
+                                                            </tr>
+                                                          </tbody>
+                                                          <tfoot>                                                        
+                                                            <tr>                                                            
+                                                              <td colspan="4" class="text-right">Sub Total (<span class="mdi mdi-currency-inr"></span>)</td>
+                                                              <td class="text-right"><b>{{SubtotalPrice | number : '1.2-2'}}</b></td>
+                                                            </tr>
+
+                                                            <tr>                                                            
+                                                              <td colspan="4" class="text-right">TAX 25%</td>
+                                                              <td class="text-right"><b>00.00</b></td>
+                                                            </tr>
+                                                            <tr>                                                             
+                                                              <td colspan="4" class="text-right">GRAND TOTAL (<span class="mdi mdi-currency-inr"></span>)</td>
+                                                              <td class="text-right"><b>{{GrandtotalPrice | number : '1.2-2'}}</b></td>
+                                                            </tr>
+                                                          </tfoot>
+                                                        </table>    
+                                                  </div>
+                                                </div>                                 
+                                          </ng-container>
+
+                                          <ng-container *ngIf="checkoutbtn">
+                                              <button type="submit" (click)="showDialog()" pButton label="REVIEW & CHECKOUT" class="btn btn-secondary btn-lg btn-block"></button>
+                                          </ng-container>
+                          
+                                        </div>
+                                      </div>
+                          
+                          
+                                      <div class="card sidebar-card">
+                                        <div class="card-body">
+                                          <h5 class="card-title mb-4">About Agent</h5>
+                                          <div class="about-agent">
+                                            <div class="carousel-inner">
+                                              <div class="carousel-item active">
+                                                <div class="card card-list">
+                                                  <a href="#">
+                                                    <img class="card-img-top" src="../../assets/img/avatar.jpg" alt="">
+                                                    <div class="card-body pb-0">
+                                                      <h5 class="card-title mb-4">Gurdeep Osahan</h5>
+                                                      <h6 class="card-subtitle mb-3 text-muted"><i class="mdi mdi-phone"></i> (950) 491-570-180</h6>
+                                                      <h6 class="card-subtitle mb-3 text-muted"><i class="mdi mdi-email"></i> support@example.com</h6>
+                                                      <h6 class="card-subtitle text-muted"><i class="mdi mdi-link"></i> www.askbootstrap.com</h6>
+                                                    </div>
+                                                  </a>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="card sidebar-card">
+                                        <div class="card-body">
+                                          <h5 class="card-title mb-4">Request a Showing</h5>
+                                          <form name="sentMessage">
+                                            <div class="control-group form-group">
+                                              <div class="controls">
+                                                <label>Your Name <span class="text-danger">*</span></label>
+                                                <input type="text" placeholder="Enter Your Name" class="form-control" required>
+                                              </div>
+                                            </div>
+                                            <div class="control-group form-group">
+                                              <div class="controls">
+                                                <label>Your Email <span class="text-danger">*</span></label>
+                                                <input type="text" placeholder="Enter Your Email" class="form-control" required>
+                                              </div>
+                                            </div>
+                                            <div class="control-group form-group">
+                                              <div class="controls">
+                                                <label>Phone <span class="text-danger">*</span></label>
+                                                <input type="text" placeholder="Enter Phone Number" class="form-control" required>
+                                              </div>
+                                            </div>
+                                            <div class="control-group form-group">
+                                              <div class="controls">
+                                                <label>Message <span class="text-danger">*</span></label>
+                                                <textarea rows="5" cols="50" class="form-control"></textarea>
+                                              </div>
+                                            </div>
+                                            <button type="submit" class="btn btn-secondary btn-lg btn-block">SEND REQUEST</button>
+                                          </form>
+                                        </div>
+                                      </div>
+                          
+                                    </div>
+                              </div>
+                            </div>
+
+
+                        </section>
+        
+        </div>
+
+
 </div>
 
 
 
-
+<!-- Modal -->
+<p-dialog header="" [(visible)]="display" [modal]="true" [responsive]="true" [style]="{width: '450px', minWidth: '200px'}" [minY]="70"
+[baseZIndex]="10000">                                          
+<app-loginmodal></app-loginmodal>
+</p-dialog>
