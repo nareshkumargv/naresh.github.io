@@ -1,0 +1,25 @@
+ <a class="dropdown-item" href="javascript:void(0);" (click)="logout()">Sign out</a>
+
+  logout(): void {
+    console.log("Logout");
+    this.authService.logout();
+    this.router.navigate(['/admin']);
+  }
+
+auth.service.ts
+import { Injectable } from '@angular/core';
+import { ILogin } from '../admin-login/login';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class AuthService {
+
+  constructor() { }
+
+  logout(): void {
+    localStorage.setItem('isLoggedIn', "false");
+    localStorage.removeItem('token');
+  }
+
+}
